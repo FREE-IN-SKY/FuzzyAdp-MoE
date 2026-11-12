@@ -2927,6 +2927,44 @@
    "_file": "rpi5/power_moe_fixed_s3_top2_run1.log"
   },
   {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi5/power_moe_fixed_s3_top2_run2.log",
+   "board": "rpi5",
+   "model": "moe_fixed_s3_top2",
+   "run_id": 2,
+   "threads": 4,
+   "heartbeats": 1807,
+   "elapsed_s": 18152.5,
+   "images": 210806.06529825044,
+   "model_ms_mean": 82.42,
+   "e2e_ms_mean": 86.11,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.4423022642545088,
+    "high": 0.537081320880475
+   },
+   "p_avg_w": {
+    "low": 5.1364825781572785,
+    "high": 6.237157416333838
+   },
+   "bank": {
+    "name": "Goji G6P10BK25",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi5/power_moe_fixed_s3_top2_run2.log"
+  },
+  {
    "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi5/power_single_s3_run1.log",
    "board": "rpi5",
    "model": "single_s3",

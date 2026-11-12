@@ -1625,7 +1625,7 @@ The two MoE runs differ in N by 0.7% (104089, 104787) and in T by 1.5% (7.16, 7.
 
 Energy ratio mean 1.061, range 0.019; computed from the N means (110799 / 104438) it is also 1.061. The throughput ratio agrees across the two runs (1.055, 1.060), while the power ratio is above 1 once and below 1 once, i.e. on the 4B the MoE uses about 6% more energy, coming from being slower per image; the difference in average power is within the fluctuation of the two discharges (the two MoE T differ by 1.5%) and is not interpreted.
 
-**Not done:** ~~RPi 4B run2 (monolithic, MoE once each);~~ ~~RPi 4B MoE run2;~~ RPi 4B none; ~~RPi 5's 4 discharges (Goji);~~ RPi 5's remaining ~~3~~ ~~2~~ 1 discharge (MoE run2, see 14.11); power of the two Jetsons (latency in 14.10; power in 14.12).
+**Not done:** ~~RPi 4B run2 (monolithic, MoE once each);~~ ~~RPi 4B MoE run2;~~ RPi 4B none; ~~RPi 5's 4 discharges (Goji);~~ ~~RPi 5's remaining~~ ~~3~~ ~~2~~ ~~1 discharge (MoE run2, see 14.11);~~ RPi 5 none (see 14.11); power of the two Jetsons (latency in 14.10; power in 14.12).
 
 **RPi 4B monolithic run2 connected to the wrong power bank (2026-11-11):** when monolithic run2 was first started, the 4B was connected to the Goji (dedicated to the RPi 5), the command did not include `--bank-name`, and the log header still said F10000. Per 14.4 "the two power banks are not mixed on the same board", that run is void, the log was deleted, and it was rerun with the F10000. The RPi 5 was not measuring at the time and was not affected; the Goji was then fully recharged.
 
@@ -1657,7 +1657,7 @@ e2e is `e2e_ms_from_loop` (the definition of paper Table IV), ratio is same-boar
 
 ### 14.11 RPi 5 discharge (Goji G6P10BK25, from 2026-11-11)
 
-Power bank Goji G6P10BK25 (14.4), 4 threads, no USB peripherals connected during measurement. Interleaved order as in 14.4: monolithic run1 → MoE run1 → monolithic run2 → MoE run2; ~~currently monolithic run1 done.~~ ~~currently monolithic run1 and MoE run1 done (first pair).~~ currently monolithic run1, MoE run1 and monolithic run2 done. Numbers from `deploy/summarize_device.py`, T and N computed as in 14.9.
+Power bank Goji G6P10BK25 (14.4), 4 threads, no USB peripherals connected during measurement. Interleaved order as in 14.4: monolithic run1 → MoE run1 → monolithic run2 → MoE run2; ~~currently monolithic run1 done.~~ ~~currently monolithic run1 and MoE run1 done (first pair).~~ ~~currently monolithic run1, MoE run1 and monolithic run2 done.~~ all four done (2026-11-12). Numbers from `deploy/summarize_device.py`, T and N computed as in 14.9.
 
 | Model | T (h) | N | Throughput (img/s) | Heartbeats | First throttled ≠ 0 | E/sample (J) | P_avg (W) |
 |---|---|---|---|---|---|---|---|
@@ -1678,9 +1678,23 @@ The intervals of E/sample and P_avg are the two bounds of E_out = 37.0 Wh × [0.
 |---|---|---|---|---|---|---|---|
 | single run2 | 5.08 | 227146 | 12.43 | 1820 | None | 0.410 ~ 0.498 | 5.10 ~ 6.19 |
 
-The two monolithic runs have the same throughput (12.47, 12.43 img/s, 0.4% difference), but T differs by 7.6% (4.72, 5.08 h) and N by 7.2%: the difference is not in inference speed but in the total energy obtained in this discharge (or the board's average power). Pairing monolithic run2 with MoE run1 gives energy ratio 1.083 = throughput ratio 1.079 × average power ratio 1.004, close to RPi 4B (1.061, 14.9), Xavier NX (1.063), Orin Nano (1.071, 14.12); the first pair's 1.010 and power ratio 0.933 come from monolithic run1's T being short (across the three discharges: monolithic run1 4.72 h, MoE run1 5.06 h, monolithic run2 5.08 h). **Author's note (2026-11-12):** the difference between the two monolithic runs comes from different room temperatures, not from the power bank or other problems. The logs do not record room temperature, so this cannot be checked from the data; CPU temperature means over five equal time segments are 62.9, 57.0, 56.8, 57.2, 57.2 °C for monolithic run1 and 60.9, 61.7, 58.3, 56.8, 56.7 °C for run2, close overall. The Pi 5 energy ratio (mean, range) will be reported after MoE run2; currently `summarize_device.py` gives 1.05 from the N mean of the 2 monolithic runs / 1 MoE run, which is only a transitional number.
+The two monolithic runs have the same throughput (12.47, 12.43 img/s, 0.4% difference), but T differs by 7.6% (4.72, 5.08 h) and N by 7.2%: the difference is not in inference speed but in the total energy obtained in this discharge (or the board's average power). Pairing monolithic run2 with MoE run1 gives energy ratio 1.083 = throughput ratio 1.079 × average power ratio 1.004, close to RPi 4B (1.061, 14.9), Xavier NX (1.063), Orin Nano (1.071, 14.12); the first pair's 1.010 and power ratio 0.933 come from monolithic run1's T being short (across the three discharges: monolithic run1 4.72 h, MoE run1 5.06 h, monolithic run2 5.08 h). **Author's note (2026-11-12):** the difference between the two monolithic runs comes from different room temperatures, not from the power bank or other problems. The logs do not record room temperature, so this cannot be checked from the data; CPU temperature means over five equal time segments are 62.9, 57.0, 56.8, 57.2, 57.2 °C for monolithic run1 and 60.9, 61.7, 58.3, 56.8, 56.7 °C for run2, close overall. ~~The Pi 5 energy ratio (mean, range) will be reported after MoE run2; currently `summarize_device.py` gives 1.05 from the N mean of the 2 monolithic runs / 1 MoE run, which is only a transitional number.~~
+7. **MoE run2 (2026-11-12 09:49 ~ 14:52) valid:** 1 log header (Goji, run_id 2), 1807 heartbeat intervals 10.0 ~ 10.1 seconds, `throttled=0x0` throughout, `EXT5V_V` above 4.951 V, last few heartbeats still about 5.00 V (cut off directly when depleted). e2e during discharge 86.11 ms, 0.8% slower than the latency measurement (85.46 ms). The two MoE runs differ by 0.5% in N (209711, 210806) and 0.3% in T (5.06, 5.04 h).
 
-**Not done:** ~~RPi 5 MoE run1, monolithic run2, MoE run2.~~ ~~RPi 5 monolithic run2, MoE run2.~~ RPi 5 MoE run2.
+| Model | T (h) | N | Throughput (img/s) | Heartbeats | First throttled ≠ 0 | E/sample (J) | P_avg (W) |
+|---|---|---|---|---|---|---|---|
+| fixed top-2 run2 | 5.04 | 210806 | 11.61 | 1807 | None | 0.442 ~ 0.537 | 5.14 ~ 6.24 |
+
+**RPi 5 summary of the four discharges (R2-C3; author's decision 2026-11-12: report all four as measured, no exclusion, no extra runs):**
+
+| Pair | Energy ratio N_single / N_MoE | Throughput ratio | Average power ratio (T_single / T_MoE) |
+|---|---|---|---|
+| run1 | 1.010 | 1.083 | 0.933 |
+| run2 | 1.078 | 1.070 | 1.007 |
+
+Mean energy ratio 1.044, range 0.067; computing from the N means (219494 / 210259) also gives 1.044. The range is 3.5 times that of the RPi 4B (0.019, 14.9) and comes entirely from monolithic run1: three of the four runs have T of 5.04 ~ 5.08 h, monolithic run1 has 4.72 h, while the throughput of all four runs differs from the latency measurement by < 1%. Monolithic run1 is valid by the criteria of 14.4 and the protocol gives no ground for excluding it, so it is counted; the author attributes it to room temperature (item 6), which the logs do not record and was not checked. The decomposition of the second pair (1.078 = 1.070 × 1.007) is the same as on the RPi 4B: the extra energy comes from each image being slower, while average power is essentially unchanged.
+
+**Not done:** ~~RPi 5 MoE run1, monolithic run2, MoE run2.~~ ~~RPi 5 monolithic run2, MoE run2.~~ ~~RPi 5 MoE run2.~~ None (Raspberry Pi discharges complete).
 
 ### 14.12 Jetson power (2026-11-11)
 
@@ -1735,7 +1749,7 @@ tegrastats slows inference by about 1% (B vs A), and running as root does not sl
 **Reading (description only):**
 1. Energy ratio E_MoE / E_single (rerun): fixed top-2 1.063 (incremental energy 1.049), fixed top-1 0.986 (incremental 0.992). The first run gave 1.053 and 0.991. The top-2 energy ratios of the two rounds differ by 1%, and the absolute energy differs by 2% ~ 4% (first-run E/sample 532.9, 560.9, 528.3 mJ).
 2. The P_load of the three models differs by < 3% (5.05 ~ 5.20 W); top-1 has the highest P_load, also the highest CPU utilization (83.1%), and is also the fastest per image (e2e 4.1% faster than the monolithic model, 1.0% faster in the latency measurement), i.e. on Xavier NX top-1 and the monolithic model cannot be separated (same as 14.10 item 3).
-3. top-2 energy ratios on the four boards: ~~RPi 4B 1.071 (14.9, 1 pair), Pi 5 1.010 (14.11, 1 pair),~~ RPi 4B 1.061 (14.9, mean of 2 pairs, 1.071 and 1.051), Pi 5 waiting for MoE run2 (14.11; first pair 1.010, monolithic run2 paired with MoE run1 1.083), Xavier NX 1.063, Orin Nano 1.071. ~~The Raspberry Pi run2 is not done, so no aggregate interpretation.~~ The Pi 5 MoE run2 is not done, so no aggregate interpretation.
+3. top-2 energy ratios on the four boards: ~~RPi 4B 1.071 (14.9, 1 pair), Pi 5 1.010 (14.11, 1 pair),~~ RPi 4B 1.061 (14.9, mean of 2 pairs, 1.071 and 1.051), ~~Pi 5 waiting for MoE run2 (14.11; first pair 1.010, monolithic run2 paired with MoE run1 1.083),~~ Pi 5 1.044 (14.11, mean of 2 pairs, 1.010 and 1.078, range 0.067), Xavier NX 1.063, Orin Nano 1.071. ~~The Raspberry Pi run2 is not done, so no aggregate interpretation.~~ ~~The Pi 5 MoE run2 is not done, so no aggregate interpretation.~~ On all four boards the MoE top-2 energy per sample is higher than the monolithic model's, by 4% ~ 7%; the lower mean and larger range on the Pi 5 come from monolithic run1 (14.11 item 7). The Raspberry Pis use the discharge method and the Jetsons use VDD_IN sampling; the methods differ, so only each board's own ratio is compared (14.4).
 
 **Not done:** ~~Xavier NX power rerun and check.~~ None (Jetson power done).
 

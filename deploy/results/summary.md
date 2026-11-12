@@ -41,7 +41,7 @@ Latency ratio (same board, model mean):
 |---|---|---|---|---|---|---|---|---|
 | rpi4b | moe_fixed_s3_top2 | 2 | 7.22 (7.16 ~ 7.27) | 104438 (104089 ~ 104787) | low: 0.893 (0.890 ~ 0.896) / high: 1.084 (1.080 ~ 1.088) | low: 3.59 (3.56 ~ 3.61) / high: 4.36 (4.32 ~ 4.39) | 2542, 2576 | none, none |
 | rpi4b | single_s3 | 2 | 7.24 (7.21 ~ 7.27) | 110799 (110167 ~ 111431) | low: 0.842 (0.837 ~ 0.846) / high: 1.022 (1.016 ~ 1.028) | low: 3.58 (3.56 ~ 3.59) / high: 4.34 (4.33 ~ 4.36) | 2591, 2562 | none, none |
-| rpi5 | moe_fixed_s3_top2 | 1 | 5.06 | 209711 | low: 0.445 / high: 0.540 | low: 5.12 / high: 6.22 | 1812 | none |
+| rpi5 | moe_fixed_s3_top2 | 2 | 5.05 (5.04 ~ 5.06) | 210258 (209711 ~ 210806) | low: 0.443 (0.442 ~ 0.445) / high: 0.538 (0.537 ~ 0.540) | low: 5.13 (5.12 ~ 5.14) / high: 6.23 (6.22 ~ 6.24) | 1812, 1807 | none, none |
 | rpi5 | single_s3 | 2 | 4.90 (4.72 ~ 5.08) | 219494 (211842 ~ 227146) | low: 0.425 (0.410 ~ 0.440) / high: 0.516 (0.498 ~ 0.534) | low: 5.30 (5.10 ~ 5.49) / high: 6.43 (6.19 ~ 6.67) | 1691, 1820 | none, none |
 
 Discharge validity: if the first nonzero throttled flag falls in the last 5% of the duration, it is the normal voltage drop of a nearly empty power bank and the run is valid; if it appears earlier or is already nonzero at the start, the run is invalid and excluded from the table above and from the energy ratios.
@@ -51,7 +51,7 @@ E_out (Intenso F10000) = 37.0 Wh × [0.7, 0.85] (nominal 3.7 V cell energy × us
 
 Energy ratio (same board, independent of the E_out assumption): E_MoE / E_single = N_single / N_MoE
 - rpi4b: moe_fixed_s3_top2: 1.06
-- rpi5: moe_fixed_s3_top2: 1.05
+- rpi5: moe_fixed_s3_top2: 1.04
 
 ## Jetson (tegrastats / INA3221, CPU-only)
 
