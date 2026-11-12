@@ -1,6 +1,6 @@
 # FuzzyAdp-MoE
 
-Code and experiment records for the paper **"Edge-AI Road Surface Classification with Fuzzy-Adaptive Mixture-of-Experts"** (IEEE AIoT 2026).
+Code and experiment records for the paper **"Edge-AI Road Surface Classification with Fuzzy-Adaptive Mixture-of-Experts"** (IEEE AIoT 2026). The supplementary document of the paper is [Supplementary.pdf](Supplementary.pdf).
 
 FuzzyAdp-MoE is a sparse mixture-of-experts (MoE) on a partitioned EfficientNet-B0 backbone with a cosine router. A Mamdani fuzzy controller adapts the routing temperature τ, the routing noise σ, and the auxiliary-loss weight λ once per epoch from validation balance and accuracy signals. Inference uses the same graph as a fixed-coefficient MoE. The repository compares it with a monolithic EfficientNet-B0, Fixed MoE, a linear schedule, and auxiliary-loss-free balancing on the per-day split of the Road Surface Classification Dataset (RSCD), and measures CPU-only inference on four edge boards.
 
@@ -8,6 +8,7 @@ FuzzyAdp-MoE is a sparse mixture-of-experts (MoE) on a partitioned EfficientNet-
 
 ```text
 FuzzyAdp-MoE/
+├── Supplementary.pdf       supplementary document of the paper
 ├── p1/                     training, evaluation, analysis, and summary code
 │   ├── common.py           data loading, augmentation, metrics, LR schedule, environment check
 │   ├── train_single.py     monolithic EfficientNet-B0
@@ -131,6 +132,7 @@ The pilot stages are run with the other `run_pilot.sh` subcommands listed at the
 
 | Paper | Source in this repository |
 |---|---|
+| Supplementary document | `Supplementary.pdf` |
 | Classification results, robustness, routing table, training time | `analysis/final/final_tables.md` (built from `runs/final/`, `runs/final_timing/`) |
 | Expert function analysis, main experiments | `runs/final/experts.json` |
 | Fuzzy controller specification (Supplementary S1) | `p1/fuzzy_v2_r3.json`; earlier rounds in `p1/fuzzy_v2.json`, `p1/fuzzy_v2_r2.json` |
