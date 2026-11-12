@@ -1,0 +1,138 @@
+{
+  "part": "8",
+  "args": {
+    "part": "8",
+    "step": null,
+    "nw_dir": "../runs/stage6c",
+    "pilot_dir": "../runs/pilot",
+    "auxfree_dir": "../runs/stage6",
+    "subset_dir": "../datasets/subsets",
+    "stage8_dir": "../runs/stage8",
+    "round": 1,
+    "out": "../runs/stage8/study8_r1.json"
+  },
+  "X": 0.005048775644651449,
+  "center_acc": [
+    0.6992748700268011,
+    0.7043236456714526,
+    0.7007787976687323
+  ],
+  "round": 1,
+  "to_run": [],
+  "runs": {
+    "fuzzy": {
+      "name": "moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s0_r1",
+      "acc_pi": 0.6909177562960118,
+      "best_epoch": 46,
+      "min_usage_tail": 16.754,
+      "top1_share_min_tail": 4.3829319506180635,
+      "w_share_min_tail": 10.502610960744162,
+      "nmi": 0.25871242731739474,
+      "excluded": false,
+      "checks": {
+        "direction": true,
+        "not_excluded": true,
+        "no_failure": true,
+        "two_bands_each": true,
+        "rules_fire": true
+      },
+      "trajectory": {
+        "lambda": {
+          "ep4_19": 2.187081298703318,
+          "ep20_35": 1.4043801388426047,
+          "ep36_50": 0.9048611491941438,
+          "min": 0.7587821645936721,
+          "max": 3.742239321786442
+        },
+        "sigma": {
+          "ep4_19": 0.4261207912152911,
+          "ep20_35": 0.4156102215999648,
+          "ep36_50": 0.22049264772346222,
+          "min": 0.17298046266868286,
+          "max": 0.6822451625507462
+        },
+        "tau": {
+          "ep4_19": 0.5221229685665238,
+          "ep20_35": 0.5184020627548596,
+          "ep36_50": 0.4063552790888812,
+          "min": 0.3824731440376439,
+          "max": 0.5739402952667934
+        }
+      },
+      "fuzzy_failures": 0,
+      "fuzzy_modes": {
+        "early-idle": 7,
+        "early": 1,
+        "full": 39
+      },
+      "bands_visited": {
+        "lambda": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "sigma": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "tau": [
+          "Low",
+          "Mid"
+        ]
+      },
+      "rule_activation_share": {
+        "R1": 0.02127659574468085,
+        "R2": 0.0851063829787234,
+        "R3": 0.0,
+        "R4": 0.3404255319148936,
+        "R5": 0.8085106382978723,
+        "R6": 0.1702127659574468,
+        "R7": 0.1276595744680851,
+        "R8": 0.44680851063829785,
+        "R9": 0.0851063829787234,
+        "R10": 0.10638297872340426
+      },
+      "passed": true
+    },
+    "schedule": {
+      "name": "moe-schedule_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s0_r1",
+      "acc_pi": 0.7023438954706648,
+      "best_epoch": 46,
+      "min_usage_tail": 17.93,
+      "top1_share_min_tail": 8.274682641449681,
+      "w_share_min_tail": 11.950744670923957,
+      "nmi": 0.23901027002713224,
+      "excluded": false,
+      "checks": {
+        "direction": true,
+        "not_excluded": true
+      },
+      "trajectory": {
+        "lambda": {
+          "ep4_19": 3.847826086956522,
+          "ep20_35": 2.4565217391304346,
+          "ep36_50": 1.108695652173913,
+          "min": 0.5,
+          "max": 4.5
+        },
+        "sigma": {
+          "ep4_19": 0.6858695652173914,
+          "ep20_35": 0.44239130434782614,
+          "ep36_50": 0.20652173913043476,
+          "min": 0.09999999999999998,
+          "max": 0.8
+        },
+        "tau": {
+          "ep4_19": 0.4592391304347826,
+          "ep20_35": 0.37228260869565216,
+          "ep36_50": 0.2880434782608695,
+          "min": 0.25,
+          "max": 0.5
+        }
+      },
+      "passed": true
+    }
+  },
+  "decision": "pass"
+}

@@ -1,0 +1,91 @@
+{
+  "kind": "jetson_tegrastats_cpu_only",
+  "board": "xavier_nx",
+  "model": "deploy/models/moe_fixed_s3_top1.pt",
+  "list": "data/val.csv",
+  "threads": 6,
+  "sample_s": 1.0,
+  "idle_seconds": 120.0,
+  "duration_seconds": 1200.0076441764832,
+  "power_source": [
+    "tegrastats:VDD_IN"
+  ],
+  "power_readings_short": [],
+  "p_idle": {
+    "mean_mw": 1746.5739130434783,
+    "std_mw": 75.17030644905348,
+    "n": 115,
+    "min_mw": 1668,
+    "max_mw": 2116
+  },
+  "p_load": {
+    "mean_mw": 5119.726569217541,
+    "std_mw": 78.02044096319987,
+    "n": 1163,
+    "min_mw": 4273,
+    "max_mw": 5422
+  },
+  "n_images": 11630,
+  "model_ms_mean": 95.78100234590795,
+  "e2e_ms_mean": 103.18208462394523,
+  "energy_per_image_mj": 528.2640601164651,
+  "incremental_energy_per_image_mj": 348.0489228188377,
+  "thermal_end_c": {
+    "CPU-therm": 36.0,
+    "GPU-therm": 33.5,
+    "AUX-therm": 33.5,
+    "AO-therm": 33.5,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 34.45
+  },
+  "env": {
+    "timestamp": "2026-11-11 03:38:46",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+      "cpu_count": 6,
+      "online": "0-5",
+      "cpufreq": [
+        {
+          "policy": "policy0",
+          "cpus": "0 1 2 3 4 5",
+          "governor": "schedutil",
+          "cur_khz": "1420800",
+          "max_khz": "1420800"
+        }
+      ],
+      "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+      "CPU-therm": 33.5,
+      "GPU-therm": 32.0,
+      "AUX-therm": 32.0,
+      "AO-therm": 32.5,
+      "PMIC-Die": 50.0,
+      "thermal_fan_est": 32.45
+    },
+    "power": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "jetson": {
+      "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+      "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2",
+      "jetson_clocks_show": "SOC family:tegra194  Machine:NVIDIA Jetson Xavier NX Developer Kit\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \nGPU MinFreq=114750000 MaxFreq=1109250000 CurrentFreq=114750000\nEMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=0\nDLA0_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA0_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nDLA1_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA1_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nPVA0_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nPVA1_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nCVNAS MinFreq=0 MaxFreq=576000000 CurrentFreq=576000000\nFAN Dynamic Speed control=active hwmon4_pwm1=0\nNV Power Mode: MODE_15W_6CORE"
+    }
+  },
+  "finished": "2026-11-11 04:00:59"
+}

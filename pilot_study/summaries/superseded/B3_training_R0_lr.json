@@ -1,0 +1,86 @@
+{
+  "stage": "lr",
+  "args": {
+    "stage": "lr",
+    "pilot_dir": "../runs/pilot",
+    "tau0": 0.5,
+    "lambda0": 1.5,
+    "sigma0": 0.2,
+    "router": "R0",
+    "aug": "B",
+    "lr": null,
+    "epochs": null,
+    "wd": null
+  },
+  "X": 0.00433214896527212,
+  "models": {
+    "single": {
+      "pick": 0.001,
+      "tied": [
+        0.001,
+        0.003
+      ],
+      "why": "持平, 按规则选默认值",
+      "runs": {
+        "1e-4": {
+          "name": "single_augB_lr1e-4_wd1e-4_e70_s0",
+          "acc_pi": 0.6880228390561375,
+          "best_epoch": 49,
+          "tail_pi": 0.6821379573192488
+        },
+        "3e-4": {
+          "name": "single_augB_lr3e-4_wd1e-4_e70_s0",
+          "acc_pi": 0.6893473831891758,
+          "best_epoch": 68,
+          "tail_pi": 0.6858643840781071
+        },
+        "1e-3": {
+          "name": "single_augB_lr1e-3_wd1e-4_e70_s0",
+          "acc_pi": 0.6995605350482264,
+          "best_epoch": 50,
+          "tail_pi": 0.6925544316395624
+        },
+        "3e-3": {
+          "name": "single_augB_lr3e-3_wd1e-4_e70_s0",
+          "acc_pi": 0.6987961029785451,
+          "best_epoch": 66,
+          "tail_pi": 0.6966482360815045
+        }
+      }
+    },
+    "moe": {
+      "pick": 0.001,
+      "tied": [
+        0.001
+      ],
+      "why": "A_pi 最高, 其他候选差距不小于 X",
+      "runs": {
+        "1e-4": {
+          "name": "moe-fixed_R0_lam1.5_sig0.2_augB_lr1e-4_wd1e-4_e70_s0",
+          "acc_pi": 0.6916165440310056,
+          "best_epoch": 46,
+          "tail_pi": 0.6757839155447347
+        },
+        "3e-4": {
+          "name": "moe-fixed_R0_lam1.5_sig0.2_augB_lr3e-4_wd1e-4_e70_s0",
+          "acc_pi": 0.6833401066584479,
+          "best_epoch": 69,
+          "tail_pi": 0.6804510015652458
+        },
+        "1e-3": {
+          "name": "moe-fixed_R0_lam1.5_sig0.2_augB_lr1e-3_wd1e-4_e70_s0",
+          "acc_pi": 0.7024742224412268,
+          "best_epoch": 63,
+          "tail_pi": 0.6969127265132393
+        },
+        "3e-3": {
+          "name": "moe-fixed_R0_lam1.5_sig0.2_augB_lr3e-3_wd1e-4_e70_s0",
+          "acc_pi": 0.6862017199502396,
+          "best_epoch": 46,
+          "tail_pi": 0.6810650855703925
+        }
+      }
+    }
+  },
+  "final": 0.001
+}

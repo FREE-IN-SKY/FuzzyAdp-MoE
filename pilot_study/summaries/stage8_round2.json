@@ -1,0 +1,264 @@
+{
+  "part": "8",
+  "args": {
+    "part": "8",
+    "step": null,
+    "nw_dir": "../runs/stage6c",
+    "pilot_dir": "../runs/pilot",
+    "auxfree_dir": "../runs/stage6",
+    "subset_dir": "../datasets/subsets",
+    "stage8_dir": "../runs/stage8",
+    "round": 2,
+    "out": "../runs/stage8/study8_r2.json"
+  },
+  "X": 0.005048775644651449,
+  "center_acc": [
+    0.6992748700268011,
+    0.7043236456714526,
+    0.7007787976687323
+  ],
+  "round": 2,
+  "to_run": [],
+  "runs": {
+    "fuzzy_s0": {
+      "name": "moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s0_r2",
+      "acc_pi": 0.6915345313172633,
+      "best_epoch": 46,
+      "min_usage_tail": 17.441,
+      "top1_share_min_tail": 4.10188127223147,
+      "w_share_min_tail": 6.935055824467478,
+      "nmi": 0.28768999374326726,
+      "excluded": false,
+      "checks": {
+        "direction": true,
+        "not_excluded": true,
+        "no_failure": true,
+        "two_bands_each": true,
+        "rules_fire": false
+      },
+      "trajectory": {
+        "lambda": {
+          "ep4_19": 1.4695391991353683,
+          "ep20_35": 1.2288354163632205,
+          "ep36_50": 0.9835409833783483,
+          "min": 0.8939915518583672,
+          "max": 1.6486578413187858
+        },
+        "sigma": {
+          "ep4_19": 0.4340267783588593,
+          "ep20_35": 0.35988906108250324,
+          "ep36_50": 0.26055748366451864,
+          "min": 0.22723562988614415,
+          "max": 0.517212673141633
+        },
+        "tau": {
+          "ep4_19": 0.4782109516483552,
+          "ep20_35": 0.4163288328859164,
+          "ep36_50": 0.25326005547021047,
+          "min": 0.25,
+          "max": 0.5
+        }
+      },
+      "fuzzy_failures": 0,
+      "fuzzy_modes": {
+        "early-idle": 8,
+        "early": 0,
+        "full": 39
+      },
+      "bands_visited": {
+        "lambda": [
+          "Low",
+          "Medium"
+        ],
+        "sigma": [
+          "Low",
+          "Medium"
+        ],
+        "tau": [
+          "Low",
+          "Mid"
+        ]
+      },
+      "rule_activation_share": {
+        "R1": 0.0,
+        "R2": 0.0425531914893617,
+        "R3": 0.0,
+        "R4": 0.3404255319148936,
+        "R5": 0.7446808510638298,
+        "R6": 0.14893617021276595,
+        "R7": 0.23404255319148937,
+        "R8": 0.5319148936170213,
+        "R9": 0.10638297872340426,
+        "R10": 0.02127659574468085
+      },
+      "passed": false
+    },
+    "fuzzy_s1": {
+      "name": "moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s1_r2",
+      "acc_pi": 0.7005707016919692,
+      "best_epoch": 41,
+      "min_usage_tail": 14.223,
+      "top1_share_min_tail": 7.03165314559355,
+      "w_share_min_tail": 16.258906800322368,
+      "nmi": 0.21595288182494957,
+      "excluded": false,
+      "checks": {
+        "direction": false,
+        "not_excluded": true,
+        "no_failure": true,
+        "two_bands_each": false,
+        "rules_fire": false
+      },
+      "trajectory": {
+        "lambda": {
+          "ep4_19": 1.763938230712527,
+          "ep20_35": 1.8185311169145206,
+          "ep36_50": 1.4168749231449402,
+          "min": 1.1534618779242165,
+          "max": 2.3318851124716797
+        },
+        "sigma": {
+          "ep4_19": 0.4101216957108036,
+          "ep20_35": 0.4010423243969298,
+          "ep36_50": 0.35261808384670423,
+          "min": 0.28348535093981503,
+          "max": 0.4683301032536219
+        },
+        "tau": {
+          "ep4_19": 0.5027513095012346,
+          "ep20_35": 0.5632758428588889,
+          "ep36_50": 0.6417934345132573,
+          "min": 0.494317288248053,
+          "max": 0.7008496336908827
+        }
+      },
+      "fuzzy_failures": 0,
+      "fuzzy_modes": {
+        "early-idle": 8,
+        "early": 0,
+        "full": 39
+      },
+      "bands_visited": {
+        "lambda": [
+          "Medium"
+        ],
+        "sigma": [
+          "Low",
+          "Medium"
+        ],
+        "tau": [
+          "High",
+          "Mid"
+        ]
+      },
+      "rule_activation_share": {
+        "R1": 0.19148936170212766,
+        "R2": 0.2127659574468085,
+        "R3": 0.0,
+        "R4": 0.3829787234042553,
+        "R5": 0.723404255319149,
+        "R6": 0.1276595744680851,
+        "R7": 0.06382978723404255,
+        "R8": 0.10638297872340426,
+        "R9": 0.06382978723404255,
+        "R10": 0.0
+      },
+      "passed": false
+    },
+    "fuzzy_s2": {
+      "name": "moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s2_r2",
+      "acc_pi": 0.6963440319775422,
+      "best_epoch": 32,
+      "min_usage_tail": 17.298,
+      "top1_share_min_tail": 9.84601098754791,
+      "w_share_min_tail": 13.784586245746253,
+      "nmi": 0.2616378187228941,
+      "excluded": false,
+      "checks": {
+        "direction": true,
+        "not_excluded": true,
+        "no_failure": true,
+        "two_bands_each": true,
+        "rules_fire": true
+      },
+      "trajectory": {
+        "lambda": {
+          "ep4_19": 1.513500610416362,
+          "ep20_35": 1.6240463758927928,
+          "ep36_50": 1.1617605351912303,
+          "min": 0.9164602007256188,
+          "max": 1.9598852153900028
+        },
+        "sigma": {
+          "ep4_19": 0.41729058082820314,
+          "ep20_35": 0.5094079092103012,
+          "ep36_50": 0.3368043028233418,
+          "min": 0.2271174880005213,
+          "max": 0.569257920037221
+        },
+        "tau": {
+          "ep4_19": 0.4907815673750901,
+          "ep20_35": 0.548897918944917,
+          "ep36_50": 0.43524933319634995,
+          "min": 0.3004968812801093,
+          "max": 0.5740279023322424
+        }
+      },
+      "fuzzy_failures": 0,
+      "fuzzy_modes": {
+        "early-idle": 8,
+        "early": 0,
+        "full": 39
+      },
+      "bands_visited": {
+        "lambda": [
+          "Low",
+          "Medium"
+        ],
+        "sigma": [
+          "High",
+          "Low",
+          "Medium"
+        ],
+        "tau": [
+          "Low",
+          "Mid"
+        ]
+      },
+      "rule_activation_share": {
+        "R1": 0.02127659574468085,
+        "R2": 0.06382978723404255,
+        "R3": 0.0425531914893617,
+        "R4": 0.425531914893617,
+        "R5": 0.723404255319149,
+        "R6": 0.2127659574468085,
+        "R7": 0.14893617021276595,
+        "R8": 0.425531914893617,
+        "R9": 0.06382978723404255,
+        "R10": 0.0425531914893617
+      },
+      "passed": true
+    }
+  },
+  "decision": "stop",
+  "behavior_passed": false,
+  "paired_vs_fixed": {
+    "fixed": [
+      "moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s0",
+      "moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s1",
+      "moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s2"
+    ],
+    "fixed_acc": [
+      0.7011130157759979,
+      0.7083623227554818,
+      0.7042433479889925
+    ],
+    "d": [
+      -0.00957848445873466,
+      -0.00779162106351261,
+      -0.00789931601145022
+    ],
+    "mean": -0.008423140511232496,
+    "non_inferior": false
+  }
+}

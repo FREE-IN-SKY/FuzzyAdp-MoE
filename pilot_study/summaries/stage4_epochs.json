@@ -1,0 +1,44 @@
+{
+  "part": "4",
+  "args": {
+    "part": "4",
+    "step": "epochs",
+    "nw_dir": "../runs/stage6c",
+    "pilot_dir": "../runs/pilot",
+    "auxfree_dir": "../runs/stage6",
+    "subset_dir": "../datasets/subsets",
+    "out": "../runs/stage6c/study4_epochs.json"
+  },
+  "X": 0.005048775644651449,
+  "center_acc": [
+    0.6992748700268011,
+    0.7043236456714526,
+    0.7007787976687323
+  ],
+  "step": "epochs",
+  "to_run": [],
+  "decision": "changed",
+  "models": {
+    "moe": {
+      "pick_seed0": 50,
+      "tied": [
+        50,
+        70,
+        100
+      ],
+      "acc_seed0": {
+        "50": 0.6963862819898674,
+        "70": 0.6992748700268011,
+        "100": 0.6961815615242379
+      },
+      "confirmed": true,
+      "d": [
+        -0.0028885880369337036,
+        -0.0043126648809238555,
+        -0.0010205370151121773
+      ],
+      "d_mean": -0.0027405966443232455,
+      "criterion": "non-inferiority (>= -X)"
+    }
+  }
+}

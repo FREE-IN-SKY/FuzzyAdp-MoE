@@ -1,0 +1,48 @@
+{
+  "stage": "epochs",
+  "args": {
+    "stage": "epochs",
+    "pilot_dir": "../runs/pilot",
+    "tau0": 0.5,
+    "lambda0": 1.5,
+    "sigma0": 0.2,
+    "router": "R0",
+    "aug": "B",
+    "lr": 0.001,
+    "epochs": null,
+    "wd": null
+  },
+  "X": 0.00433214896527212,
+  "models": {
+    "moe": {
+      "pick": 70,
+      "tied": [
+        70,
+        100
+      ],
+      "why": "tied; choose the shortest",
+      "runs": {
+        "50": {
+          "name": "moe-fixed_R0_lam1.5_sig0.2_augB_lr1e-3_wd1e-4_e50_s0",
+          "acc_pi": 0.6944622924988775,
+          "best_epoch": 48,
+          "tail_pi": 0.6922365547448617
+        },
+        "70": {
+          "name": "moe-fixed_R0_lam1.5_sig0.2_augB_lr1e-3_wd1e-4_e70_s0",
+          "acc_pi": 0.7024742224412268,
+          "best_epoch": 63,
+          "tail_pi": 0.6969127265132393
+        },
+        "100": {
+          "name": "moe-fixed_R0_lam1.5_sig0.2_augB_lr1e-3_wd1e-4_e100_s0",
+          "acc_pi": 0.7002840070291725,
+          "best_epoch": 98,
+          "tail_pi": 0.6950780164264874
+        }
+      }
+    }
+  },
+  "final": 70,
+  "extension_triggered": false
+}

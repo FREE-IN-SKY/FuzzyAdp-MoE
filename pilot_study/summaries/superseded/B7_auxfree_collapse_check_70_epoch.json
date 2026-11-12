@@ -1,0 +1,41 @@
+{
+  "part": "B",
+  "args": {
+    "part": "B",
+    "stage6_dir": "../runs/stage6",
+    "router_dir": "../runs/router",
+    "threshold": "../runs/pilot/threshold.json",
+    "subset_dir": "../datasets/subsets",
+    "tau0": 0.5,
+    "lambda0": 1.5,
+    "sigma0": 0.2,
+    "extend": [],
+    "out": "../runs/stage6/stage6b.json"
+  },
+  "X": 0.00433214896527212,
+  "run": "moe-auxfree_R4_lam0_sig0_augB_lr1e-3_wd1e-4_e70_s0",
+  "tau0": 0.5,
+  "sigma0": 0.0,
+  "auxfree_lambda": 0.0,
+  "auxfree_gamma": 0.001,
+  "best_epoch": 59,
+  "acc_pi": 0.6964340449579512,
+  "center_seed0_acc_pi": 0.6986930810044323,
+  "router_params": 3168,
+  "min_usage_tail": 17.274,
+  "cos_gap_p50": 0.4197228401899338,
+  "w1": 0.5807641744613647,
+  "w_share_min_tail": 16.94022059036902,
+  "top1_share_min_tail": 10.328448378974148,
+  "nmi": 0.2424794499797536,
+  "nobias_min_usage_tail": 16.069,
+  "bias_changed_top2_tail_mean": 0.09117039586919104,
+  "route_bias_last": [
+    -1.3360099792480469,
+    -1.33201003074646,
+    -1.3680100440979004,
+    -1.3580100536346436,
+    -1.2879999876022339
+  ],
+  "stop": false
+}

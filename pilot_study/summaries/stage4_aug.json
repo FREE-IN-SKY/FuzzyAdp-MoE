@@ -1,0 +1,44 @@
+{
+  "part": "4",
+  "args": {
+    "part": "4",
+    "step": "aug",
+    "nw_dir": "../runs/stage6c",
+    "pilot_dir": "../runs/pilot",
+    "auxfree_dir": "../runs/stage6",
+    "subset_dir": "../datasets/subsets",
+    "out": "../runs/stage6c/study4_aug.json"
+  },
+  "X": 0.005048775644651449,
+  "center_acc": [
+    0.6992748700268011,
+    0.7043236456714526,
+    0.7007787976687323
+  ],
+  "step": "aug",
+  "to_run": [],
+  "decision": "keep",
+  "models": {
+    "single": {
+      "pick": "B",
+      "tied": [
+        "B"
+      ],
+      "acc": {
+        "A": 0.6775632684991642,
+        "B": 0.6995605350482264
+      }
+    },
+    "moe": {
+      "pick_seed0": "B",
+      "tied": [
+        "B"
+      ],
+      "acc_seed0": {
+        "A": 0.6763078791029408,
+        "B": 0.6992748700268011
+      },
+      "confirmed": null
+    }
+  }
+}

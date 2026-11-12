@@ -1,0 +1,10 @@
+{
+  "new": "../runs/router/moe-fixed_R0_lam1.5_sig0.2_augB_lr1e-3_wd1e-4_e70_s1",
+  "reference": "../runs/pilot/moe-fixed_R0_lam1.5_sig0.2_augB_lr1e-3_wd1e-4_e70_s1",
+  "passed": true,
+  "first_difference": null,
+  "checked": {
+    "history_columns": 31,
+    "epochs": 70
+  }
+}

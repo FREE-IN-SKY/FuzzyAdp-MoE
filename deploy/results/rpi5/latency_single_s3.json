@@ -1,0 +1,99 @@
+{
+  "board": "rpi5",
+  "model": "deploy/models/single_s3.pt",
+  "list": "data/val.csv",
+  "n": 5810,
+  "batch_size": 1,
+  "warmup": 5,
+  "threads": 4,
+  "model_ms": {
+    "mean": 76.33153848399336,
+    "median": 76.41457699992316,
+    "p90": 77.06650399995851,
+    "p99": 77.64558599956217,
+    "std": 0.6135446621126588,
+    "min": 73.68359700012661,
+    "max": 78.98485199984862
+  },
+  "e2e_ms": {
+    "mean": 80.78923326712761,
+    "median": 80.80713999970612,
+    "p90": 81.64519599995401,
+    "p99": 82.52789600010146,
+    "std": 0.7355966922653645,
+    "min": 77.32958299948223,
+    "max": 90.53794000010384
+  },
+  "loop_seconds": 469.69083120899995,
+  "throughput_img_per_s": 12.36983908126302,
+  "e2e_ms_from_loop": 80.84179538881239,
+  "accuracy": 0.6438898450946644,
+  "reference": {
+    "file": "references/single_augB_lr1e-3_wd0.01_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "checked": true,
+    "ok": true
+  },
+  "thermal_start_c": {
+    "cpu-thermal": 36.4
+  },
+  "thermal_end_c": {
+    "cpu-thermal": 60.05
+  },
+  "power": {
+    "start": {
+      "throttled": "0x0",
+      "ok": true,
+      "ext5v_v": 5.21528
+    },
+    "end": {
+      "throttled": "0x0",
+      "ok": true,
+      "ext5v_v": 5.21126
+    },
+    "ok": true
+  },
+  "predictions_csv": "deploy/results/rpi5/latency_single_s3_predictions.csv",
+  "env": {
+    "timestamp": "2026-11-10 07:42:09",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-2712",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+      "cpu_count": 4,
+      "online": "0-3",
+      "cpufreq": [
+        {
+          "policy": "policy0",
+          "cpus": "0 1 2 3",
+          "governor": "ondemand",
+          "cur_khz": "2400000",
+          "max_khz": "2400000"
+        }
+      ],
+      "cpu_model": "Raspberry Pi 5 Model B Rev 1.0"
+    },
+    "mem_total_kb": "8255808",
+    "thermal_c": {
+      "cpu-thermal": 33.1
+    },
+    "power": {
+      "throttled": "0x0",
+      "ok": true,
+      "ext5v_v": 5.21528
+    },
+    "jetson": null
+  },
+  "finished": "2026-11-10 07:50:02"
+}

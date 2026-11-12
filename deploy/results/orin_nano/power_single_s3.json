@@ -1,0 +1,98 @@
+{
+  "kind": "jetson_tegrastats_cpu_only",
+  "board": "orin_nano",
+  "model": "deploy/models/single_s3.pt",
+  "list": "data/val.csv",
+  "threads": 6,
+  "sample_s": 1.0,
+  "idle_seconds": 120.0,
+  "duration_seconds": 1200.053730726242,
+  "power_source": [
+    "tegrastats:VDD_IN"
+  ],
+  "power_readings_short": [],
+  "p_idle": {
+    "mean_mw": 2920.2100840336134,
+    "std_mw": 21.365122741066514,
+    "n": 119,
+    "min_mw": 2905,
+    "max_mw": 2990
+  },
+  "p_load": {
+    "mean_mw": 5295.415617128463,
+    "std_mw": 95.25034965599741,
+    "n": 1191,
+    "min_mw": 4841,
+    "max_mw": 5422
+  },
+  "n_images": 13772,
+  "model_ms_mean": 81.23906726816926,
+  "e2e_ms_mean": 87.13721541724092,
+  "energy_per_image_mj": 461.42777135354464,
+  "incremental_energy_per_image_mj": 206.96879619750848,
+  "thermal_end_c": {
+    "cpu-thermal": 39.5,
+    "gpu-thermal": 39.156,
+    "soc0-thermal": 40.25,
+    "soc1-thermal": 38.906,
+    "soc2-thermal": 39.312,
+    "tj-thermal": 40.343
+  },
+  "env": {
+    "timestamp": "2026-11-11 02:53:35",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+      "cpu_count": 6,
+      "online": "0-5",
+      "cpufreq": [
+        {
+          "policy": "policy0",
+          "cpus": "0 1 2 3",
+          "governor": "schedutil",
+          "cur_khz": "1344000",
+          "max_khz": "1344000"
+        },
+        {
+          "policy": "policy4",
+          "cpus": "4 5",
+          "governor": "schedutil",
+          "cur_khz": "729600",
+          "max_khz": "1344000"
+        }
+      ],
+      "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+      "cpu-thermal": 36.187,
+      "gpu-thermal": 36.187,
+      "soc0-thermal": 37.093,
+      "soc1-thermal": 35.875,
+      "soc2-thermal": 35.906,
+      "tj-thermal": 37.093
+    },
+    "power": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "jetson": {
+      "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+      "nvpmodel_q": "NV Power Mode: 25W\n1",
+      "jetson_clocks_show": "sudo: a password is required"
+    }
+  },
+  "finished": "2026-11-11 03:15:41"
+}

@@ -1,0 +1,118 @@
+{
+  "board": "xavier_nx",
+  "model": "deploy/models/single_s3.pt",
+  "list": "data/val.csv",
+  "n": 5810,
+  "batch_size": 1,
+  "warmup": 5,
+  "threads": 6,
+  "model_ms": {
+    "mean": 93.46566036178291,
+    "median": 90.85214950027876,
+    "p90": 99.94288199959556,
+    "p99": 140.47714099979203,
+    "std": 11.410303431590537,
+    "min": 87.89991400044528,
+    "max": 249.5403550001356
+  },
+  "e2e_ms": {
+    "mean": 100.75698779725049,
+    "median": 98.11264700056199,
+    "p90": 107.31320800005051,
+    "p99": 150.1630959992326,
+    "std": 11.613257210027987,
+    "min": 94.89743199992517,
+    "max": 271.146852000129
+  },
+  "loop_seconds": 586.2134562040001,
+  "throughput_img_per_s": 9.911065565813525,
+  "e2e_ms_from_loop": 100.89732464784855,
+  "accuracy": 0.6438898450946644,
+  "reference": {
+    "file": "references/single_augB_lr1e-3_wd0.01_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "checked": true,
+    "ok": true
+  },
+  "thermal_start_c": {
+    "CPU-therm": 28.5,
+    "GPU-therm": 27.0,
+    "AUX-therm": 27.0,
+    "AO-therm": 27.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 27.45
+  },
+  "thermal_end_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 33.0,
+    "AUX-therm": 32.5,
+    "AO-therm": 33.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.45
+  },
+  "power": {
+    "start": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "end": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "ok": null
+  },
+  "predictions_csv": "deploy/results/xavier_nx/latency_single_s3_rerun_predictions.csv",
+  "env": {
+    "timestamp": "2026-11-11 02:09:13",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+      "cpu_count": 6,
+      "online": "0-5",
+      "cpufreq": [
+        {
+          "policy": "policy0",
+          "cpus": "0 1 2 3 4 5",
+          "governor": "schedutil",
+          "cur_khz": "1420800",
+          "max_khz": "1420800"
+        }
+      ],
+      "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+      "CPU-therm": 27.5,
+      "GPU-therm": 26.5,
+      "AUX-therm": 26.5,
+      "AO-therm": 27.0,
+      "PMIC-Die": 50.0,
+      "thermal_fan_est": 26.95
+    },
+    "power": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "jetson": {
+      "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+      "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG WARN: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG CRIT: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit",
+      "jetson_clocks_show": "sudo: a password is required"
+    }
+  },
+  "finished": "2026-11-11 02:19:09"
+}

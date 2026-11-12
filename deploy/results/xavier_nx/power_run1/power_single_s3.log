@@ -1,0 +1,22 @@
+[2026-11-11 02:54:08] board=xavier_nx model=deploy/models/single_s3.pt threads=6 power=tegrastats VDD_IN every 1000 ms (now 2116 mW) nvpmodel='NV Power Mode: MODE_15W_6CORE\n2'
+[2026-11-11 02:56:10] idle done: 114 readings, mean 1709.6052631578948 mW
+[2026-11-11 02:57:12] load 60s images=565 VDD_IN 5096 mW
+[2026-11-11 02:58:12] load 120s images=1136 VDD_IN 5136 mW
+[2026-11-11 02:59:12] load 180s images=1722 VDD_IN 5218 mW
+[2026-11-11 03:00:12] load 240s images=2309 VDD_IN 5136 mW
+[2026-11-11 03:01:12] load 300s images=2885 VDD_IN 5177 mW
+[2026-11-11 03:02:13] load 360s images=3452 VDD_IN 5177 mW
+[2026-11-11 03:03:13] load 420s images=4033 VDD_IN 5299 mW
+[2026-11-11 03:04:13] load 480s images=4614 VDD_IN 5136 mW
+[2026-11-11 03:05:13] load 540s images=5187 VDD_IN 5096 mW
+[2026-11-11 03:06:13] load 601s images=5768 VDD_IN 5136 mW
+[2026-11-11 03:07:13] load 661s images=6348 VDD_IN 5136 mW
+[2026-11-11 03:08:13] load 721s images=6919 VDD_IN 5136 mW
+[2026-11-11 03:09:13] load 781s images=7493 VDD_IN 5136 mW
+[2026-11-11 03:10:13] load 841s images=8073 VDD_IN 5381 mW
+[2026-11-11 03:11:13] load 901s images=8655 VDD_IN 5136 mW
+[2026-11-11 03:12:13] load 961s images=9233 VDD_IN 5055 mW
+[2026-11-11 03:13:13] load 1021s images=9822 VDD_IN 5136 mW
+[2026-11-11 03:14:13] load 1081s images=10410 VDD_IN 5136 mW
+[2026-11-11 03:15:13] load 1141s images=10989 VDD_IN 5136 mW
+[2026-11-11 03:16:12] done: images=11561 model 96.2 ms e2e 103.8 ms; P_idle=1709.6052631578948 mW (n=114) P_load=5133.933734939759 mW (n=1162) E/img=532.9053517481047 mJ; saved deploy/results/xavier_nx/power_single_s3.json

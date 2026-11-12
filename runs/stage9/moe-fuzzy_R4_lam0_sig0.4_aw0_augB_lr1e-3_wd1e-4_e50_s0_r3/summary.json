@@ -1,0 +1,5 @@
+{
+  "best_epoch": 45,
+  "best_val_acc_pi": 0.7084228733649173,
+  "total_time_min": 84.0
+}

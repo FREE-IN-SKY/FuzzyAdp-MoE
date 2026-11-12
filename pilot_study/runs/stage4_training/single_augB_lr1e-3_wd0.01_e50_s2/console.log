@@ -1,0 +1,52 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[1/50] lr=3.40e-04 train_loss=1.4034 train_acc=0.6018 | val acc=0.5287 A_pi=0.5756 BA=0.4151 F1=0.4032 * | 93s + 8s
+[2/50] lr=6.70e-04 train_loss=0.6329 train_acc=0.7903 | val acc=0.5401 A_pi=0.5875 BA=0.4266 F1=0.4202 * | 69s + 4s
+[3/50] lr=1.00e-03 train_loss=0.5494 train_acc=0.8139 | val acc=0.5497 A_pi=0.5996 BA=0.4363 F1=0.4266 * | 69s + 4s
+[4/50] lr=9.99e-04 train_loss=0.4911 train_acc=0.8340 | val acc=0.5966 A_pi=0.6406 BA=0.4885 F1=0.4839 * | 69s + 4s
+[5/50] lr=9.96e-04 train_loss=0.4235 train_acc=0.8563 | val acc=0.5954 A_pi=0.6348 BA=0.5020 F1=0.4967  | 69s + 4s
+[6/50] lr=9.90e-04 train_loss=0.3729 train_acc=0.8721 | val acc=0.6145 A_pi=0.6576 BA=0.5190 F1=0.5078 * | 69s + 4s
+[7/50] lr=9.82e-04 train_loss=0.3360 train_acc=0.8816 | val acc=0.6158 A_pi=0.6596 BA=0.5197 F1=0.5137 * | 70s + 4s
+[8/50] lr=9.72e-04 train_loss=0.3032 train_acc=0.8947 | val acc=0.5986 A_pi=0.6452 BA=0.4924 F1=0.4852  | 69s + 4s
+[9/50] lr=9.60e-04 train_loss=0.2811 train_acc=0.9020 | val acc=0.6055 A_pi=0.6559 BA=0.4999 F1=0.4948  | 69s + 4s
+[10/50] lr=9.46e-04 train_loss=0.2476 train_acc=0.9127 | val acc=0.5941 A_pi=0.6401 BA=0.4876 F1=0.4863  | 69s + 4s
+[11/50] lr=9.30e-04 train_loss=0.2274 train_acc=0.9197 | val acc=0.6086 A_pi=0.6529 BA=0.5026 F1=0.4997  | 69s + 4s
+[12/50] lr=9.12e-04 train_loss=0.2012 train_acc=0.9284 | val acc=0.5954 A_pi=0.6382 BA=0.4932 F1=0.4929  | 70s + 4s
+[13/50] lr=8.93e-04 train_loss=0.1869 train_acc=0.9341 | val acc=0.6191 A_pi=0.6618 BA=0.5207 F1=0.5166 * | 69s + 4s
+[14/50] lr=8.71e-04 train_loss=0.1639 train_acc=0.9430 | val acc=0.6057 A_pi=0.6545 BA=0.5009 F1=0.4919  | 69s + 4s
+[15/50] lr=8.48e-04 train_loss=0.1470 train_acc=0.9484 | val acc=0.6048 A_pi=0.6522 BA=0.5019 F1=0.4961  | 69s + 4s
+[16/50] lr=8.23e-04 train_loss=0.1409 train_acc=0.9509 | val acc=0.5991 A_pi=0.6444 BA=0.4977 F1=0.4890  | 69s + 4s
+[17/50] lr=7.97e-04 train_loss=0.1260 train_acc=0.9556 | val acc=0.6131 A_pi=0.6533 BA=0.5187 F1=0.5149  | 69s + 4s
+[18/50] lr=7.69e-04 train_loss=0.1078 train_acc=0.9623 | val acc=0.6150 A_pi=0.6588 BA=0.5215 F1=0.5147  | 69s + 4s
+[19/50] lr=7.41e-04 train_loss=0.0963 train_acc=0.9660 | val acc=0.6017 A_pi=0.6450 BA=0.5014 F1=0.5004  | 69s + 4s
+[20/50] lr=7.11e-04 train_loss=0.0924 train_acc=0.9677 | val acc=0.6293 A_pi=0.6751 BA=0.5321 F1=0.5288 * | 69s + 4s
+[21/50] lr=6.80e-04 train_loss=0.0864 train_acc=0.9702 | val acc=0.6186 A_pi=0.6693 BA=0.5064 F1=0.5013  | 69s + 4s
+[22/50] lr=6.48e-04 train_loss=0.0699 train_acc=0.9760 | val acc=0.6250 A_pi=0.6724 BA=0.5171 F1=0.5124  | 69s + 4s
+[23/50] lr=6.16e-04 train_loss=0.0618 train_acc=0.9780 | val acc=0.6194 A_pi=0.6629 BA=0.5163 F1=0.5143  | 69s + 4s
+[24/50] lr=5.84e-04 train_loss=0.0650 train_acc=0.9779 | val acc=0.6191 A_pi=0.6654 BA=0.5173 F1=0.5157  | 69s + 4s
+[25/50] lr=5.50e-04 train_loss=0.0501 train_acc=0.9822 | val acc=0.6303 A_pi=0.6778 BA=0.5192 F1=0.5132 * | 69s + 4s
+[26/50] lr=5.17e-04 train_loss=0.0461 train_acc=0.9848 | val acc=0.6411 A_pi=0.6929 BA=0.5303 F1=0.5263 * | 69s + 4s
+[27/50] lr=4.84e-04 train_loss=0.0429 train_acc=0.9846 | val acc=0.6179 A_pi=0.6655 BA=0.5117 F1=0.5078  | 69s + 3s
+[28/50] lr=4.51e-04 train_loss=0.0331 train_acc=0.9892 | val acc=0.6234 A_pi=0.6722 BA=0.5199 F1=0.5142  | 68s + 3s
+[29/50] lr=4.17e-04 train_loss=0.0313 train_acc=0.9886 | val acc=0.6346 A_pi=0.6834 BA=0.5220 F1=0.5198  | 68s + 3s
+[30/50] lr=3.85e-04 train_loss=0.0277 train_acc=0.9905 | val acc=0.6194 A_pi=0.6660 BA=0.5126 F1=0.5065  | 68s + 3s
+[31/50] lr=3.53e-04 train_loss=0.0186 train_acc=0.9935 | val acc=0.6404 A_pi=0.6859 BA=0.5334 F1=0.5312  | 68s + 3s
+[32/50] lr=3.21e-04 train_loss=0.0191 train_acc=0.9935 | val acc=0.6472 A_pi=0.6985 BA=0.5325 F1=0.5284 * | 68s + 3s
+[33/50] lr=2.90e-04 train_loss=0.0158 train_acc=0.9948 | val acc=0.6460 A_pi=0.6955 BA=0.5318 F1=0.5288  | 68s + 3s
+[34/50] lr=2.60e-04 train_loss=0.0157 train_acc=0.9948 | val acc=0.6399 A_pi=0.6884 BA=0.5300 F1=0.5280  | 68s + 3s
+[35/50] lr=2.32e-04 train_loss=0.0110 train_acc=0.9965 | val acc=0.6343 A_pi=0.6807 BA=0.5281 F1=0.5248  | 68s + 3s
+[36/50] lr=2.04e-04 train_loss=0.0087 train_acc=0.9968 | val acc=0.6386 A_pi=0.6838 BA=0.5332 F1=0.5307  | 68s + 3s
+[37/50] lr=1.78e-04 train_loss=0.0091 train_acc=0.9970 | val acc=0.6358 A_pi=0.6867 BA=0.5194 F1=0.5161  | 68s + 3s
+[38/50] lr=1.53e-04 train_loss=0.0056 train_acc=0.9983 | val acc=0.6439 A_pi=0.6950 BA=0.5269 F1=0.5234  | 68s + 3s
+[39/50] lr=1.30e-04 train_loss=0.0058 train_acc=0.9982 | val acc=0.6382 A_pi=0.6865 BA=0.5265 F1=0.5258  | 68s + 3s
+[40/50] lr=1.08e-04 train_loss=0.0056 train_acc=0.9981 | val acc=0.6377 A_pi=0.6858 BA=0.5273 F1=0.5231  | 68s + 3s
+[41/50] lr=8.87e-05 train_loss=0.0041 train_acc=0.9989 | val acc=0.6336 A_pi=0.6813 BA=0.5235 F1=0.5220  | 68s + 3s
+[42/50] lr=7.07e-05 train_loss=0.0033 train_acc=0.9990 | val acc=0.6325 A_pi=0.6810 BA=0.5224 F1=0.5194  | 68s + 3s
+[43/50] lr=5.47e-05 train_loss=0.0026 train_acc=0.9995 | val acc=0.6384 A_pi=0.6859 BA=0.5317 F1=0.5298  | 68s + 3s
+[44/50] lr=4.06e-05 train_loss=0.0026 train_acc=0.9993 | val acc=0.6456 A_pi=0.6951 BA=0.5320 F1=0.5313  | 68s + 3s
+[45/50] lr=2.86e-05 train_loss=0.0022 train_acc=0.9993 | val acc=0.6394 A_pi=0.6888 BA=0.5272 F1=0.5252  | 68s + 3s
+[46/50] lr=1.87e-05 train_loss=0.0020 train_acc=0.9996 | val acc=0.6444 A_pi=0.6924 BA=0.5366 F1=0.5343  | 68s + 3s
+[47/50] lr=1.10e-05 train_loss=0.0017 train_acc=0.9995 | val acc=0.6437 A_pi=0.6919 BA=0.5352 F1=0.5332  | 68s + 3s
+[48/50] lr=5.46e-06 train_loss=0.0014 train_acc=0.9996 | val acc=0.6406 A_pi=0.6894 BA=0.5309 F1=0.5281  | 68s + 3s
+[49/50] lr=2.12e-06 train_loss=0.0016 train_acc=0.9996 | val acc=0.6423 A_pi=0.6907 BA=0.5320 F1=0.5303  | 68s + 3s
+[50/50] lr=1.00e-06 train_loss=0.0021 train_acc=0.9994 | val acc=0.6415 A_pi=0.6899 BA=0.5324 F1=0.5301  | 68s + 3s
+Done. Best validation A_pi=0.6985 (epoch 32), Output directory: ../runs/pilot/single_augB_lr1e-3_wd0.01_e50_s2

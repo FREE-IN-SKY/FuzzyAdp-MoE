@@ -1,0 +1,101 @@
+{
+  "board": "rpi4b",
+  "model": "deploy/models/moe_fuzzy_s3_top2.pt",
+  "list": "data/val.csv",
+  "n": 5810,
+  "batch_size": 1,
+  "warmup": 5,
+  "threads": 4,
+  "model_ms": {
+    "mean": 241.30714162392906,
+    "median": 240.8611020000535,
+    "p90": 242.95208100011223,
+    "p99": 244.4415170002685,
+    "std": 6.780586317001654,
+    "min": 234.31006700047874,
+    "max": 514.0481710004678
+  },
+  "e2e_ms": {
+    "mean": 248.32425259243686,
+    "median": 247.8189264993489,
+    "p90": 249.92803000077402,
+    "p99": 251.44793799881882,
+    "std": 7.783167500358461,
+    "min": 241.06940799993026,
+    "max": 526.6061199999967
+  },
+  "loop_seconds": 1443.7822776459998,
+  "throughput_img_per_s": 4.024152457026177,
+  "e2e_ms_from_loop": 248.49953143648878,
+  "accuracy": 0.6454388984509466,
+  "reference": {
+    "file": "references/moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+  },
+  "thermal_start_c": {
+    "cpu-thermal": 48.199
+  },
+  "thermal_end_c": {
+    "cpu-thermal": 54.043
+  },
+  "power": {
+    "start": {
+      "throttled": "0x0",
+      "ok": true,
+      "ext5v_v": null
+    },
+    "end": {
+      "throttled": "0x0",
+      "ok": true,
+      "ext5v_v": null
+    },
+    "ok": true
+  },
+  "predictions_csv": "deploy/results/rpi4b/latency_moe_fuzzy_s3_top2_predictions.csv",
+  "env": {
+    "timestamp": "2026-11-10 09:41:02",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 4 Model B Rev 1.4",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-v8",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+      "cpu_count": 4,
+      "online": "0-3",
+      "cpufreq": [
+        {
+          "policy": "policy0",
+          "cpus": "0 1 2 3",
+          "governor": "ondemand",
+          "cur_khz": "1800000",
+          "max_khz": "1800000"
+        }
+      ],
+      "cpu_model": "Raspberry Pi 4 Model B Rev 1.4"
+    },
+    "mem_total_kb": "8007400",
+    "thermal_c": {
+      "cpu-thermal": 44.79
+    },
+    "power": {
+      "throttled": "0x0",
+      "ok": true,
+      "ext5v_v": null
+    },
+    "jetson": null
+  },
+  "finished": "2026-11-10 10:05:14"
+}

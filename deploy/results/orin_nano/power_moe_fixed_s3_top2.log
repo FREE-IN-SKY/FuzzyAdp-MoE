@@ -1,0 +1,22 @@
+[2026-11-11 03:15:53] board=orin_nano model=deploy/models/moe_fixed_s3_top2.pt threads=6 power=tegrastats VDD_IN every 1000 ms (now 3144 mW) nvpmodel='NV Power Mode: 25W\n1'
+[2026-11-11 03:17:54] idle done: 119 readings, mean 2924.453781512605 mW
+[2026-11-11 03:18:55] load 60s images=644 VDD_IN 5304 mW
+[2026-11-11 03:19:55] load 120s images=1287 VDD_IN 5274 mW
+[2026-11-11 03:20:55] load 180s images=1933 VDD_IN 5304 mW
+[2026-11-11 03:21:55] load 240s images=2568 VDD_IN 5313 mW
+[2026-11-11 03:22:55] load 300s images=3207 VDD_IN 5234 mW
+[2026-11-11 03:23:55] load 360s images=3842 VDD_IN 5116 mW
+[2026-11-11 03:24:55] load 420s images=4479 VDD_IN 5383 mW
+[2026-11-11 03:25:56] load 480s images=5117 VDD_IN 5344 mW
+[2026-11-11 03:26:56] load 540s images=5758 VDD_IN 5304 mW
+[2026-11-11 03:27:56] load 600s images=6398 VDD_IN 5304 mW
+[2026-11-11 03:28:56] load 660s images=7047 VDD_IN 5344 mW
+[2026-11-11 03:29:56] load 720s images=7698 VDD_IN 5147 mW
+[2026-11-11 03:30:56] load 781s images=8336 VDD_IN 5383 mW
+[2026-11-11 03:31:56] load 841s images=8975 VDD_IN 5195 mW
+[2026-11-11 03:32:56] load 901s images=9610 VDD_IN 5187 mW
+[2026-11-11 03:33:56] load 961s images=10265 VDD_IN 5274 mW
+[2026-11-11 03:34:56] load 1021s images=10904 VDD_IN 5304 mW
+[2026-11-11 03:35:56] load 1081s images=11550 VDD_IN 5234 mW
+[2026-11-11 03:36:56] load 1141s images=12192 VDD_IN 5116 mW
+[2026-11-11 03:37:55] done: images=12825 model 87.8 ms e2e 93.6 ms; P_idle=2924.453781512605 mW (n=119) P_load=5283.446683459278 mW (n=1191) E/img=494.37758260413517 mJ; saved deploy/results/orin_nano/power_moe_fixed_s3_top2.json

@@ -1,0 +1,4 @@
+moe-fixed_R4_oracle_lam1.5_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s0: A_pi 0.6954; drop when masking top-1 +52.65 pp, top-2 +54.01 pp; random 2 0.3695; gain +71.73 pp (25/27 classes > 0); CKA mean 0.374, min 0.298; disagreement 0.709
+moe-fixed_R4_oracle_lam1.5_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s1: A_pi 0.7127; drop when masking top-1 +53.86 pp, top-2 +54.72 pp; random 2 0.3792; gain +73.25 pp (23/27 classes > 0); CKA mean 0.311, min 0.054; disagreement 0.692
+moe-fixed_R4_oracle_lam1.5_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s2: A_pi 0.6991; drop when masking top-1 +53.24 pp, top-2 +52.83 pp; random 2 0.3743; gain +72.56 pp (23/27 classes > 0); CKA mean 0.363, min 0.147; disagreement 0.719
+Results written to ../runs/oracle/experts.json (descriptive only; no thresholds)

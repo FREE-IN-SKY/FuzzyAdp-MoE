@@ -1,0 +1,113 @@
+{
+  "part": "7",
+  "args": {
+    "part": "7",
+    "step": null,
+    "nw_dir": "../runs/stage6c",
+    "pilot_dir": "../runs/pilot",
+    "auxfree_dir": "../runs/stage6",
+    "subset_dir": "../datasets/subsets",
+    "out": "../runs/stage6/study7.json"
+  },
+  "X": 0.005048775644651449,
+  "center_acc": [
+    0.6992748700268011,
+    0.7043236456714526,
+    0.7007787976687323
+  ],
+  "to_run": [],
+  "decision": "keep",
+  "runs": {
+    "1e-3_s0": {
+      "name": "moe-auxfree_R4_lam0_sig0_augB_lr1e-3_wd1e-4_e50_s0",
+      "acc_pi": 0.6953818089732743,
+      "best_epoch": 43,
+      "router_params": 3168,
+      "min_usage_tail": 16.52,
+      "cos_gap_p50": 0.37347322702407837,
+      "w1": 0.5757486820220947,
+      "w_share_min_tail": 17.48602326047367,
+      "top1_share_min_tail": 11.832503800220973,
+      "nmi": 0.24480675053862427
+    },
+    "1e-3_s1": {
+      "name": "moe-auxfree_R4_lam0_sig0_augB_lr1e-3_wd1e-4_e50_s1",
+      "acc_pi": 0.6971916227125253,
+      "best_epoch": 48,
+      "router_params": 3168,
+      "min_usage_tail": 15.481,
+      "cos_gap_p50": 0.42539890110492706,
+      "w1": 0.5917803645133972,
+      "w_share_min_tail": 17.33739836656399,
+      "top1_share_min_tail": 14.603185607690547,
+      "nmi": 0.19632288942830858
+    },
+    "1e-3_s2": {
+      "name": "moe-auxfree_R4_lam0_sig0_augB_lr1e-3_wd1e-4_e50_s2",
+      "acc_pi": 0.7040114498532635,
+      "best_epoch": 44,
+      "router_params": 3168,
+      "min_usage_tail": 16.953,
+      "cos_gap_p50": 0.44748350977897644,
+      "w1": 0.5854492783546448,
+      "w_share_min_tail": 15.60138514071915,
+      "top1_share_min_tail": 11.866952940667563,
+      "nmi": 0.23165766021979492
+    },
+    "0.01_s0": {
+      "name": "moe-auxfree_R4_lam0_sig0_g0.01_augB_lr1e-3_wd1e-4_e50_s0",
+      "acc_pi": 0.7001837763748927,
+      "best_epoch": 46,
+      "router_params": 3168,
+      "min_usage_tail": 15.836,
+      "cos_gap_p50": 0.40110111236572266,
+      "w1": 0.5851702094078064,
+      "w_share_min_tail": 14.760746378516387,
+      "top1_share_min_tail": 11.364183663979233,
+      "nmi": 0.23745028132002366
+    },
+    "1e-4_s0": {
+      "name": "moe-auxfree_R4_lam0_sig0_g1e-4_augB_lr1e-3_wd1e-4_e50_s0",
+      "acc_pi": 0.7091738731280915,
+      "best_epoch": 42,
+      "router_params": 3168,
+      "min_usage_tail": 16.397,
+      "cos_gap_p50": 0.5352270305156708,
+      "w1": 0.6109763383865356,
+      "w_share_min_tail": 12.793383643474208,
+      "top1_share_min_tail": 7.226593506603636,
+      "nmi": 0.21357205846671917
+    },
+    "1e-4_s1": {
+      "name": "moe-auxfree_R4_lam0_sig0_g1e-4_augB_lr1e-3_wd1e-4_e50_s1",
+      "acc_pi": 0.6999335203973622,
+      "best_epoch": 50,
+      "router_params": 3168,
+      "min_usage_tail": 0.01,
+      "cos_gap_p50": 0.46473997831344604,
+      "w1": 0.6425276398658752,
+      "w_share_min_tail": 0.00985693410711799,
+      "top1_share_min_tail": 0.0,
+      "nmi": 0.13705324333403707
+    },
+    "1e-4_s2": {
+      "name": "moe-auxfree_R4_lam0_sig0_g1e-4_augB_lr1e-3_wd1e-4_e50_s2",
+      "acc_pi": 0.6935302856820362,
+      "best_epoch": 46,
+      "router_params": 3168,
+      "min_usage_tail": 17.476,
+      "cos_gap_p50": 0.25296494364738464,
+      "w1": 0.5961547493934631,
+      "w_share_min_tail": 12.991158153845262,
+      "top1_share_min_tail": 0.05831301185812114,
+      "nmi": 0.206609163045977
+    }
+  },
+  "pick_seed0": 0.0001,
+  "d": [
+    0.013792064154817263,
+    0.0027418976848369025,
+    -0.010481164171227242
+  ],
+  "d_mean": 0.0020175992228089745
+}

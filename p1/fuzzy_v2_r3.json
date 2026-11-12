@@ -1,0 +1,48 @@
+{
+  "_comment": "FuzzyAdp-MoE controller configuration, stage 8 round 3 (2026-11-06). Differs from round 2 (fuzzy_v2_r2.json) in only one place: the noise of R5, R8, R9 changes from Low to Medium (centroid 0.40, i.e. the σ0 calibrated for fixed), so that in the state of the fixed baseline (B normal or perfect, T_slow plateau) σ is no longer pushed toward 0.17. Used to test \"lowering σ in the balanced state makes fuzzy from the baseline start low\"; basis in analysis/Pilot_Study.md 10.3.",
+  "inputs": {
+    "B": {"range": [50, 100, 0.5], "terms": {
+      "Unstable": ["trap", [50, 50, 74, 80]],
+      "Normal": ["tri", [74, 86.5, 94]],
+      "Perfect": ["trap", [87, 93, 100, 100]]}},
+    "T_fast": {"range": [-0.04, 0.04, 0.0005], "terms": {
+      "Degrading": ["trap", [-0.04, -0.04, -0.025, -0.018]]}},
+    "T_slow": {"range": [-0.03, 0.05, 0.0005], "terms": {
+      "Degrading": ["trap", [-0.03, -0.03, -0.008, 0.0]],
+      "Stable": ["tri", [-0.006, 0.003, 0.012]],
+      "Improving": ["trap", [0.006, 0.015, 0.05, 0.05]]}}
+  },
+  "outputs": {
+    "delta_tau": {"range": [-0.075, 0.075, 0.0005], "terms": {
+      "Decrease": ["tri", [-0.075, -0.045, 0.0]],
+      "Keep": ["tri", [-0.015, 0.0, 0.015]],
+      "Increase": ["tri", [0.0, 0.045, 0.075]]}},
+    "lambda_out": {"range": [0.5, 4.5, 0.01], "terms": {
+      "Low": ["trap", [0.5, 0.5, 0.7, 1.2]],
+      "Medium": ["tri", [0.5, 1.5, 2.5]],
+      "High": ["trap", [2.5, 3.8, 4.5, 4.5]]}},
+    "noise": {"range": [0.1, 0.8, 0.001], "terms": {
+      "Low": ["trap", [0.1, 0.1, 0.15, 0.3]],
+      "Medium": ["tri", [0.15, 0.4, 0.65]],
+      "High": ["trap", [0.5, 0.65, 0.8, 0.8]]}}
+  },
+  "rules": [
+    {"name": "R1",  "if": {"B": "Unstable", "T_slow": "Improving"}, "then": {"delta_tau": "Keep",     "lambda_out": "High",   "noise": "Medium"}},
+    {"name": "R2",  "if": {"B": "Unstable", "T_slow": "Stable"},    "then": {"delta_tau": "Increase", "lambda_out": "High",   "noise": "High"}},
+    {"name": "R3",  "if": {"B": "Unstable", "T_slow": "Degrading"}, "then": {"delta_tau": "Increase", "lambda_out": "High",   "noise": "High"}},
+    {"name": "R4",  "if": {"B": "Normal",   "T_slow": "Improving"}, "then": {"delta_tau": "Keep",     "lambda_out": "Medium", "noise": "High"}},
+    {"name": "R5",  "if": {"B": "Normal",   "T_slow": "Stable"},    "then": {"delta_tau": "Keep",     "lambda_out": "Low",    "noise": "Medium"}},
+    {"name": "R6",  "if": {"B": "Normal",   "T_slow": "Degrading"}, "then": {"delta_tau": "Increase", "lambda_out": "Medium", "noise": "Medium"}},
+    {"name": "R7",  "if": {"B": "Perfect",  "T_slow": "Improving"}, "then": {"delta_tau": "Decrease", "lambda_out": "Low",    "noise": "Medium"}},
+    {"name": "R8",  "if": {"B": "Perfect",  "T_slow": "Stable"},    "then": {"delta_tau": "Decrease", "lambda_out": "Low",    "noise": "Medium"}},
+    {"name": "R9",  "if": {"B": "Perfect",  "T_slow": "Degrading"}, "then": {"delta_tau": "Keep",     "lambda_out": "Low",    "noise": "Medium"}},
+    {"name": "R10", "if": {"T_fast": "Degrading"},                  "then": {"delta_tau": "Increase", "lambda_out": "High",   "noise": "Medium"}}
+  ],
+  "early_mode": true,
+  "output_ema": 0.8,
+  "window_fast": 3,
+  "window_slow": 10,
+  "beta": 0.8,
+  "tau_min": 0.25,
+  "tau_max": 1.0
+}

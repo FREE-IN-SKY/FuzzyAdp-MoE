@@ -1,0 +1,4 @@
+moe-fixed_R4_lam1.5_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s0: A_pi 0.6973; drop when masking top-1 +12.71 pp, top-2 +17.28 pp; random 2 0.5979; gain +20.42 pp (21/27 classes > 0); CKA mean 0.340, min 0.200; disagreement 0.523
+moe-fixed_R4_lam1.5_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s1: A_pi 0.7025; drop when masking top-1 +13.31 pp, top-2 +17.39 pp; random 2 0.5976; gain +24.06 pp (24/27 classes > 0); CKA mean 0.288, min 0.181; disagreement 0.562
+moe-fixed_R4_lam1.5_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s2: A_pi 0.7031; drop when masking top-1 +15.23 pp, top-2 +18.27 pp; random 2 0.5923; gain +27.36 pp (25/27 classes > 0); CKA mean 0.281, min 0.198; disagreement 0.566
+Results written to ../runs/stage9/experts_sigma0.json (descriptive only; no thresholds)

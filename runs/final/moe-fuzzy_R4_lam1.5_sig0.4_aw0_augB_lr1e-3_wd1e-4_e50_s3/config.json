@@ -1,0 +1,414 @@
+{
+  "controller": "fuzzy",
+  "router": "R4",
+  "root": "../datasets/RSCD dataset-1million",
+  "subset_dir": "../datasets/subsets",
+  "train_list": "train_s3.csv",
+  "val_list": "val.csv",
+  "aug": "B",
+  "lr": 0.001,
+  "min_lr": 1e-06,
+  "weight_decay": 0.0001,
+  "epochs": 50,
+  "warmup_epochs": 3,
+  "batch_size": 64,
+  "seed": 3,
+  "tau0": 0.5,
+  "lambda0": 1.5,
+  "sigma0": 0.4,
+  "aux_warmup_frac": 0.0,
+  "sched_tau_end": 0.25,
+  "sched_lambda_start": 4.5,
+  "sched_lambda_end": 0.5,
+  "sched_sigma_start": 0.8,
+  "sched_sigma_end": 0.1,
+  "fuzzy_config": {
+    "_comment": "FuzzyAdp-MoE 控制器配置, 阶段 8 第 3 轮 (2026-11-06). 与第 2 轮 (fuzzy_v2_r2.json) 只有一处不同: R5, R8, R9 的 noise 由 Low 改为 Medium (重心 0.40, 即 fixed 标定的 σ0), 使 fixed 基线所处的状态 (B 正常或完美, T_slow 平台) 下 σ 不再被推向 0.17. 用于检验 \"均衡状态下 σ 下调导致基线起点的 fuzzy 偏低\"; 依据见 analysis/Pilot_Study.md 10.3.",
+    "inputs": {
+      "B": {
+        "range": [
+          50,
+          100,
+          0.5
+        ],
+        "terms": {
+          "Unstable": [
+            "trap",
+            [
+              50,
+              50,
+              74,
+              80
+            ]
+          ],
+          "Normal": [
+            "tri",
+            [
+              74,
+              86.5,
+              94
+            ]
+          ],
+          "Perfect": [
+            "trap",
+            [
+              87,
+              93,
+              100,
+              100
+            ]
+          ]
+        }
+      },
+      "T_fast": {
+        "range": [
+          -0.04,
+          0.04,
+          0.0005
+        ],
+        "terms": {
+          "Degrading": [
+            "trap",
+            [
+              -0.04,
+              -0.04,
+              -0.025,
+              -0.018
+            ]
+          ]
+        }
+      },
+      "T_slow": {
+        "range": [
+          -0.03,
+          0.05,
+          0.0005
+        ],
+        "terms": {
+          "Degrading": [
+            "trap",
+            [
+              -0.03,
+              -0.03,
+              -0.008,
+              0.0
+            ]
+          ],
+          "Stable": [
+            "tri",
+            [
+              -0.006,
+              0.003,
+              0.012
+            ]
+          ],
+          "Improving": [
+            "trap",
+            [
+              0.006,
+              0.015,
+              0.05,
+              0.05
+            ]
+          ]
+        }
+      }
+    },
+    "outputs": {
+      "delta_tau": {
+        "range": [
+          -0.075,
+          0.075,
+          0.0005
+        ],
+        "terms": {
+          "Decrease": [
+            "tri",
+            [
+              -0.075,
+              -0.045,
+              0.0
+            ]
+          ],
+          "Keep": [
+            "tri",
+            [
+              -0.015,
+              0.0,
+              0.015
+            ]
+          ],
+          "Increase": [
+            "tri",
+            [
+              0.0,
+              0.045,
+              0.075
+            ]
+          ]
+        }
+      },
+      "lambda_out": {
+        "range": [
+          0.5,
+          4.5,
+          0.01
+        ],
+        "terms": {
+          "Low": [
+            "trap",
+            [
+              0.5,
+              0.5,
+              0.7,
+              1.2
+            ]
+          ],
+          "Medium": [
+            "tri",
+            [
+              0.5,
+              1.5,
+              2.5
+            ]
+          ],
+          "High": [
+            "trap",
+            [
+              2.5,
+              3.8,
+              4.5,
+              4.5
+            ]
+          ]
+        }
+      },
+      "noise": {
+        "range": [
+          0.1,
+          0.8,
+          0.001
+        ],
+        "terms": {
+          "Low": [
+            "trap",
+            [
+              0.1,
+              0.1,
+              0.15,
+              0.3
+            ]
+          ],
+          "Medium": [
+            "tri",
+            [
+              0.15,
+              0.4,
+              0.65
+            ]
+          ],
+          "High": [
+            "trap",
+            [
+              0.5,
+              0.65,
+              0.8,
+              0.8
+            ]
+          ]
+        }
+      }
+    },
+    "rules": [
+      {
+        "name": "R1",
+        "if": {
+          "B": "Unstable",
+          "T_slow": "Improving"
+        },
+        "then": {
+          "delta_tau": "Keep",
+          "lambda_out": "High",
+          "noise": "Medium"
+        }
+      },
+      {
+        "name": "R2",
+        "if": {
+          "B": "Unstable",
+          "T_slow": "Stable"
+        },
+        "then": {
+          "delta_tau": "Increase",
+          "lambda_out": "High",
+          "noise": "High"
+        }
+      },
+      {
+        "name": "R3",
+        "if": {
+          "B": "Unstable",
+          "T_slow": "Degrading"
+        },
+        "then": {
+          "delta_tau": "Increase",
+          "lambda_out": "High",
+          "noise": "High"
+        }
+      },
+      {
+        "name": "R4",
+        "if": {
+          "B": "Normal",
+          "T_slow": "Improving"
+        },
+        "then": {
+          "delta_tau": "Keep",
+          "lambda_out": "Medium",
+          "noise": "High"
+        }
+      },
+      {
+        "name": "R5",
+        "if": {
+          "B": "Normal",
+          "T_slow": "Stable"
+        },
+        "then": {
+          "delta_tau": "Keep",
+          "lambda_out": "Low",
+          "noise": "Medium"
+        }
+      },
+      {
+        "name": "R6",
+        "if": {
+          "B": "Normal",
+          "T_slow": "Degrading"
+        },
+        "then": {
+          "delta_tau": "Increase",
+          "lambda_out": "Medium",
+          "noise": "Medium"
+        }
+      },
+      {
+        "name": "R7",
+        "if": {
+          "B": "Perfect",
+          "T_slow": "Improving"
+        },
+        "then": {
+          "delta_tau": "Decrease",
+          "lambda_out": "Low",
+          "noise": "Medium"
+        }
+      },
+      {
+        "name": "R8",
+        "if": {
+          "B": "Perfect",
+          "T_slow": "Stable"
+        },
+        "then": {
+          "delta_tau": "Decrease",
+          "lambda_out": "Low",
+          "noise": "Medium"
+        }
+      },
+      {
+        "name": "R9",
+        "if": {
+          "B": "Perfect",
+          "T_slow": "Degrading"
+        },
+        "then": {
+          "delta_tau": "Keep",
+          "lambda_out": "Low",
+          "noise": "Medium"
+        }
+      },
+      {
+        "name": "R10",
+        "if": {
+          "T_fast": "Degrading"
+        },
+        "then": {
+          "delta_tau": "Increase",
+          "lambda_out": "High",
+          "noise": "Medium"
+        }
+      }
+    ],
+    "early_mode": true,
+    "output_ema": 0.8,
+    "window_fast": 3,
+    "window_slow": 10,
+    "beta": 0.8,
+    "tau_min": 0.25,
+    "tau_max": 1.0
+  },
+  "auxfree_gamma": 0.001,
+  "auxfree_lambda": 0.0,
+  "num_workers": 14,
+  "no_pretrained": false,
+  "max_steps_per_epoch": 0,
+  "out_dir": "../runs/final/moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3",
+  "overwrite": false,
+  "env_lock": "/home/zhiyong/Documents/projects/paper/Edge-AI/runs/env_lock.json",
+  "no_diagnostics": false,
+  "env": {
+    "python": "3.12.12",
+    "torch": "2.10.0+cu128",
+    "torchvision": "0.25.0",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "scikit-fuzzy": "0.5.0",
+    "cuda_runtime": "12.8",
+    "cudnn": 91002,
+    "nvidia_driver": "595.91.07",
+    "gpu": "NVIDIA GeForce RTX 4070 Laptop GPU",
+    "kernel": "7.0.0-38-generic",
+    "git_commit": "411e8872104b73789df12bf3c5a74f55727e5515",
+    "git_dirty": false
+  },
+  "model": "moe",
+  "class_names": [
+    "dry_asphalt_severe",
+    "dry_asphalt_slight",
+    "dry_asphalt_smooth",
+    "dry_concrete_severe",
+    "dry_concrete_slight",
+    "dry_concrete_smooth",
+    "dry_gravel",
+    "dry_mud",
+    "fresh_snow",
+    "ice",
+    "melted_snow",
+    "water_asphalt_severe",
+    "water_asphalt_slight",
+    "water_asphalt_smooth",
+    "water_concrete_severe",
+    "water_concrete_slight",
+    "water_concrete_smooth",
+    "water_gravel",
+    "water_mud",
+    "wet_asphalt_severe",
+    "wet_asphalt_slight",
+    "wet_asphalt_smooth",
+    "wet_concrete_severe",
+    "wet_concrete_slight",
+    "wet_concrete_smooth",
+    "wet_gravel",
+    "wet_mud"
+  ],
+  "num_experts": 5,
+  "top_k": 2,
+  "split_block": 6,
+  "aux_warmup_epochs": 0,
+  "router_params": 3168,
+  "train_size": 41130,
+  "val_size": 5810,
+  "device": "cuda"
+}

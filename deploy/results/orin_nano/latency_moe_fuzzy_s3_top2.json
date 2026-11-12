@@ -1,0 +1,127 @@
+{
+  "board": "orin_nano",
+  "model": "deploy/models/moe_fuzzy_s3_top2.pt",
+  "list": "data/val.csv",
+  "n": 5810,
+  "batch_size": 1,
+  "warmup": 5,
+  "threads": 6,
+  "model_ms": {
+    "mean": 88.77187090551217,
+    "median": 82.97897449938318,
+    "p90": 90.61667300011322,
+    "p99": 193.42884700017748,
+    "std": 21.870489144564665,
+    "min": 77.23881200035976,
+    "max": 255.81862299986824
+  },
+  "e2e_ms": {
+    "mean": 94.64264489002515,
+    "median": 88.70416749959986,
+    "p90": 96.62510400085011,
+    "p99": 200.59021799897891,
+    "std": 23.434140596020352,
+    "min": 82.6171560001967,
+    "max": 708.5377349994815
+  },
+  "loop_seconds": 551.6413547760003,
+  "throughput_img_per_s": 10.532205299146238,
+  "e2e_ms_from_loop": 94.94687689776254,
+  "accuracy": 0.6454388984509466,
+  "reference": {
+    "file": "references/moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+  },
+  "thermal_start_c": {
+    "cpu-thermal": 39.531,
+    "gpu-thermal": 39.0,
+    "soc0-thermal": 40.0,
+    "soc1-thermal": 38.812,
+    "soc2-thermal": 39.062,
+    "tj-thermal": 40.093
+  },
+  "thermal_end_c": {
+    "cpu-thermal": 39.781,
+    "gpu-thermal": 39.406,
+    "soc0-thermal": 40.437,
+    "soc1-thermal": 39.125,
+    "soc2-thermal": 39.406,
+    "tj-thermal": 40.437
+  },
+  "power": {
+    "start": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "end": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "ok": null
+  },
+  "predictions_csv": "deploy/results/orin_nano/latency_moe_fuzzy_s3_top2_predictions.csv",
+  "env": {
+    "timestamp": "2026-11-11 01:47:57",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+      "cpu_count": 6,
+      "online": "0-5",
+      "cpufreq": [
+        {
+          "policy": "policy0",
+          "cpus": "0 1 2 3",
+          "governor": "schedutil",
+          "cur_khz": "1344000",
+          "max_khz": "1344000"
+        },
+        {
+          "policy": "policy4",
+          "cpus": "4 5",
+          "governor": "schedutil",
+          "cur_khz": "729600",
+          "max_khz": "1344000"
+        }
+      ],
+      "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+      "cpu-thermal": 39.031,
+      "gpu-thermal": 38.937,
+      "soc0-thermal": 40.125,
+      "soc1-thermal": 38.781,
+      "soc2-thermal": 38.937,
+      "tj-thermal": 40.125
+    },
+    "power": {
+      "throttled": null,
+      "ok": null,
+      "ext5v_v": null
+    },
+    "jetson": {
+      "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+      "nvpmodel_q": "NV Power Mode: 25W\n1",
+      "jetson_clocks_show": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1190400 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=960000 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=806400 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=918000000 CurrentFreq=306000000\nActive GPU TPCs: 4\nEMC MinFreq=204000000 MaxFreq=3199000000 CurrentFreq=204000000 FreqOverride=0\nFAN Dynamic Speed Control=nvfancontrol hwmon0_pwm1=30\nNV Power Mode: 25W"
+    }
+  },
+  "finished": "2026-11-11 01:57:15"
+}

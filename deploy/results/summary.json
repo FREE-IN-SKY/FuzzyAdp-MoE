@@ -1,0 +1,3588 @@
+{
+ "latency": [
+  {
+   "board": "orin_nano",
+   "model": "deploy/models/moe_auxfree_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 87.4859442370216,
+    "median": 81.27427749968774,
+    "p90": 90.89610499904666,
+    "p99": 188.64197299990337,
+    "std": 21.896689976233333,
+    "min": 76.05330300066271,
+    "max": 249.38598700100556
+   },
+   "e2e_ms": {
+    "mean": 93.27426473340417,
+    "median": 86.90285499960737,
+    "p90": 97.12346600099409,
+    "p99": 194.77360600103566,
+    "std": 23.45057428930304,
+    "min": 81.22626600015792,
+    "max": 702.7371550011594
+   },
+   "loop_seconds": 543.6772081290001,
+   "throughput_img_per_s": 10.686488072572361,
+   "e2e_ms_from_loop": 93.57611155404476,
+   "accuracy": 0.651118760757315,
+   "reference": {
+    "file": "references/moe-auxfree_R4_lam0_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 39.656,
+    "gpu-thermal": 39.5,
+    "soc0-thermal": 40.312,
+    "soc1-thermal": 39.062,
+    "soc2-thermal": 39.218,
+    "tj-thermal": 40.312
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 39.906,
+    "gpu-thermal": 39.5,
+    "soc0-thermal": 40.468,
+    "soc1-thermal": 39.125,
+    "soc2-thermal": 39.468,
+    "tj-thermal": 40.468
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/orin_nano/latency_moe_auxfree_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:38:42",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 39.093,
+     "gpu-thermal": 39.187,
+     "soc0-thermal": 40.343,
+     "soc1-thermal": 39.093,
+     "soc2-thermal": 39.125,
+     "tj-thermal": 40.343
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=883200 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=918000000 CurrentFreq=306000000\nActive GPU TPCs: 4\nEMC MinFreq=204000000 MaxFreq=3199000000 CurrentFreq=204000000 FreqOverride=0\nFAN Dynamic Speed Control=nvfancontrol hwmon0_pwm1=30\nNV Power Mode: 25W"
+    }
+   },
+   "finished": "2026-11-11 01:47:51",
+   "model_tag": "moe_auxfree_s3_top2",
+   "_file": "orin_nano/latency_moe_auxfree_s3_top2.json"
+  },
+  {
+   "board": "orin_nano",
+   "model": "deploy/models/moe_fixed_s3_top1.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 82.3206558721312,
+    "median": 76.23098349995416,
+    "p90": 86.08488599929842,
+    "p99": 182.91320699972857,
+    "std": 21.423666189525832,
+    "min": 71.97453399930964,
+    "max": 247.64509499982523
+   },
+   "e2e_ms": {
+    "mean": 88.10313335389027,
+    "median": 81.83557900065352,
+    "p90": 92.0849400008592,
+    "p99": 189.73373799963156,
+    "std": 23.003851419857984,
+    "min": 77.28854900051374,
+    "max": 694.34351199925
+   },
+   "loop_seconds": 513.5413738219995,
+   "throughput_img_per_s": 11.313596715215834,
+   "e2e_ms_from_loop": 88.38922096764192,
+   "accuracy": 0.6337349397590362,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 0.9628227194492255,
+    "expert_set_agreement": 0.0,
+    "top1_expert_agreement": 1.0,
+    "checked": false,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 39.437,
+    "gpu-thermal": 39.312,
+    "soc0-thermal": 40.375,
+    "soc1-thermal": 39.062,
+    "soc2-thermal": 39.312,
+    "tj-thermal": 40.375
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 39.968,
+    "gpu-thermal": 39.625,
+    "soc0-thermal": 40.718,
+    "soc1-thermal": 39.5,
+    "soc2-thermal": 39.781,
+    "tj-thermal": 40.718
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/orin_nano/latency_moe_fixed_s3_top1_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:20:41",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 39.218,
+     "gpu-thermal": 39.25,
+     "soc0-thermal": 40.312,
+     "soc1-thermal": 39.218,
+     "soc2-thermal": 39.187,
+     "tj-thermal": 40.343
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=960000 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=918000000 CurrentFreq=306000000\nActive GPU TPCs: 4\nEMC MinFreq=204000000 MaxFreq=3199000000 CurrentFreq=665600000 FreqOverride=0\nFAN Dynamic Speed Control=nvfancontrol hwmon0_pwm1=30\nNV Power Mode: 25W"
+    }
+   },
+   "finished": "2026-11-11 01:29:20",
+   "model_tag": "moe_fixed_s3_top1",
+   "_file": "orin_nano/latency_moe_fixed_s3_top1.json"
+  },
+  {
+   "board": "orin_nano",
+   "model": "deploy/models/moe_fixed_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 87.77594649794219,
+    "median": 81.17829200000415,
+    "p90": 93.45000999928743,
+    "p99": 192.14735199966526,
+    "std": 22.65065022043977,
+    "min": 76.37051699930453,
+    "max": 259.7950689996651
+   },
+   "e2e_ms": {
+    "mean": 93.49343419244256,
+    "median": 86.74895449985343,
+    "p90": 99.52304500075115,
+    "p99": 199.01902600031462,
+    "std": 24.262097035066986,
+    "min": 81.81366499957221,
+    "max": 729.0232719988126
+   },
+   "loop_seconds": 544.8976759950001,
+   "throughput_img_per_s": 10.662552357909693,
+   "e2e_ms_from_loop": 93.78617487005165,
+   "accuracy": 0.640447504302926,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 39.593,
+    "gpu-thermal": 39.156,
+    "soc0-thermal": 40.312,
+    "soc1-thermal": 39.031,
+    "soc2-thermal": 39.312,
+    "tj-thermal": 40.312
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 40.062,
+    "gpu-thermal": 39.593,
+    "soc0-thermal": 40.656,
+    "soc1-thermal": 39.531,
+    "soc2-thermal": 39.718,
+    "tj-thermal": 40.656
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/orin_nano/latency_moe_fixed_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:11:24",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 39.156,
+     "gpu-thermal": 39.343,
+     "soc0-thermal": 40.375,
+     "soc1-thermal": 39.125,
+     "soc2-thermal": 39.125,
+     "tj-thermal": 40.375
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=960000 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=918000000 CurrentFreq=306000000\nActive GPU TPCs: 4\nEMC MinFreq=204000000 MaxFreq=3199000000 CurrentFreq=665600000 FreqOverride=0\nFAN Dynamic Speed Control=nvfancontrol hwmon0_pwm1=31\nNV Power Mode: 25W"
+    }
+   },
+   "finished": "2026-11-11 01:20:35",
+   "model_tag": "moe_fixed_s3_top2",
+   "_file": "orin_nano/latency_moe_fixed_s3_top2.json"
+  },
+  {
+   "board": "orin_nano",
+   "model": "deploy/models/moe_fuzzy_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 88.77187090551217,
+    "median": 82.97897449938318,
+    "p90": 90.61667300011322,
+    "p99": 193.42884700017748,
+    "std": 21.870489144564665,
+    "min": 77.23881200035976,
+    "max": 255.81862299986824
+   },
+   "e2e_ms": {
+    "mean": 94.64264489002515,
+    "median": 88.70416749959986,
+    "p90": 96.62510400085011,
+    "p99": 200.59021799897891,
+    "std": 23.434140596020352,
+    "min": 82.6171560001967,
+    "max": 708.5377349994815
+   },
+   "loop_seconds": 551.6413547760003,
+   "throughput_img_per_s": 10.532205299146238,
+   "e2e_ms_from_loop": 94.94687689776254,
+   "accuracy": 0.6454388984509466,
+   "reference": {
+    "file": "references/moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 39.531,
+    "gpu-thermal": 39.0,
+    "soc0-thermal": 40.0,
+    "soc1-thermal": 38.812,
+    "soc2-thermal": 39.062,
+    "tj-thermal": 40.093
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 39.781,
+    "gpu-thermal": 39.406,
+    "soc0-thermal": 40.437,
+    "soc1-thermal": 39.125,
+    "soc2-thermal": 39.406,
+    "tj-thermal": 40.437
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/orin_nano/latency_moe_fuzzy_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:47:57",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 39.031,
+     "gpu-thermal": 38.937,
+     "soc0-thermal": 40.125,
+     "soc1-thermal": 38.781,
+     "soc2-thermal": 38.937,
+     "tj-thermal": 40.125
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1190400 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=960000 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=806400 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=918000000 CurrentFreq=306000000\nActive GPU TPCs: 4\nEMC MinFreq=204000000 MaxFreq=3199000000 CurrentFreq=204000000 FreqOverride=0\nFAN Dynamic Speed Control=nvfancontrol hwmon0_pwm1=30\nNV Power Mode: 25W"
+    }
+   },
+   "finished": "2026-11-11 01:57:15",
+   "model_tag": "moe_fuzzy_s3_top2",
+   "_file": "orin_nano/latency_moe_fuzzy_s3_top2.json"
+  },
+  {
+   "board": "orin_nano",
+   "model": "deploy/models/moe_schedule_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 87.48554537986179,
+    "median": 81.15289899978961,
+    "p90": 91.15044099962688,
+    "p99": 196.5397509993636,
+    "std": 22.452603413979528,
+    "min": 76.59582000087539,
+    "max": 256.88110800001596
+   },
+   "e2e_ms": {
+    "mean": 93.24003334078448,
+    "median": 86.74189049997949,
+    "p90": 97.87734899873612,
+    "p99": 204.18705100018997,
+    "std": 23.96380183005991,
+    "min": 81.98935700056609,
+    "max": 701.58717799859
+   },
+   "loop_seconds": 543.462199218,
+   "throughput_img_per_s": 10.690715947420335,
+   "e2e_ms_from_loop": 93.53910485679863,
+   "accuracy": 0.6492254733218589,
+   "reference": {
+    "file": "references/moe-schedule_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 39.812,
+    "gpu-thermal": 39.281,
+    "soc0-thermal": 40.312,
+    "soc1-thermal": 39.093,
+    "soc2-thermal": 39.343,
+    "tj-thermal": 40.312
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 39.968,
+    "gpu-thermal": 39.593,
+    "soc0-thermal": 40.656,
+    "soc1-thermal": 39.406,
+    "soc2-thermal": 39.593,
+    "tj-thermal": 40.656
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/orin_nano/latency_moe_schedule_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:29:26",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 39.125,
+     "gpu-thermal": 39.125,
+     "soc0-thermal": 40.406,
+     "soc1-thermal": 39.093,
+     "soc2-thermal": 39.312,
+     "tj-thermal": 40.468
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1267200 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=918000000 CurrentFreq=306000000\nActive GPU TPCs: 4\nEMC MinFreq=204000000 MaxFreq=3199000000 CurrentFreq=665600000 FreqOverride=0\nFAN Dynamic Speed Control=nvfancontrol hwmon0_pwm1=30\nNV Power Mode: 25W"
+    }
+   },
+   "finished": "2026-11-11 01:38:36",
+   "model_tag": "moe_schedule_s3_top2",
+   "_file": "orin_nano/latency_moe_schedule_s3_top2.json"
+  },
+  {
+   "board": "orin_nano",
+   "model": "deploy/models/single_s3.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 80.57479719622006,
+    "median": 75.11879699995916,
+    "p90": 83.07034500103327,
+    "p99": 174.38264599877584,
+    "std": 20.109348123714472,
+    "min": 70.63758699950995,
+    "max": 235.59073699834698
+   },
+   "e2e_ms": {
+    "mean": 86.46233750740178,
+    "median": 80.96393050072948,
+    "p90": 89.21725300024264,
+    "p99": 180.66900099984196,
+    "std": 20.295333898182296,
+    "min": 76.13620399934007,
+    "max": 244.41373799891153
+   },
+   "loop_seconds": 503.3434841489998,
+   "throughput_img_per_s": 11.542813571577145,
+   "e2e_ms_from_loop": 86.63399038709119,
+   "accuracy": 0.6438898450946644,
+   "reference": {
+    "file": "references/single_augB_lr1e-3_wd0.01_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 36.468,
+    "gpu-thermal": 36.468,
+    "soc0-thermal": 37.375,
+    "soc1-thermal": 36.093,
+    "soc2-thermal": 36.343,
+    "tj-thermal": 37.375
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 39.968,
+    "gpu-thermal": 39.906,
+    "soc0-thermal": 40.687,
+    "soc1-thermal": 39.593,
+    "soc2-thermal": 39.75,
+    "tj-thermal": 40.687
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/orin_nano/latency_single_s3_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:02:49",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 36.125,
+     "gpu-thermal": 36.437,
+     "soc0-thermal": 37.375,
+     "soc1-thermal": 35.906,
+     "soc2-thermal": 36.218,
+     "tj-thermal": 37.375
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "SOC family:tegra234  Machine:NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1113600 IdleStates: WFI=1 c7=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=1344000 IdleStates: WFI=1 c7=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=729600 MaxFreq=1344000 CurrentFreq=729600 IdleStates: WFI=1 c7=1 \nGPU MinFreq=306000000 MaxFreq=918000000 CurrentFreq=306000000\nActive GPU TPCs: 4\nEMC MinFreq=204000000 MaxFreq=3199000000 CurrentFreq=665600000 FreqOverride=0\nFAN Dynamic Speed Control=nvfancontrol hwmon0_pwm1=64\nNV Power Mode: 25W"
+    }
+   },
+   "finished": "2026-11-11 01:11:18",
+   "model_tag": "single_s3",
+   "_file": "orin_nano/latency_single_s3.json"
+  },
+  {
+   "board": "rpi4b",
+   "model": "deploy/models/moe_auxfree_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 242.0665986843353,
+    "median": 241.78641849994165,
+    "p90": 243.93470999984856,
+    "p99": 245.3184189998865,
+    "std": 1.3427972703192683,
+    "min": 235.6952280006226,
+    "max": 256.9583029999194
+   },
+   "e2e_ms": {
+    "mean": 249.12300633751892,
+    "median": 248.8054049999846,
+    "p90": 250.9843309999269,
+    "p99": 252.50580400006584,
+    "std": 3.879370113512923,
+    "min": 242.5351239999145,
+    "max": 525.4934220001815
+   },
+   "loop_seconds": 1448.4413871890001,
+   "throughput_img_per_s": 4.011208221048907,
+   "e2e_ms_from_loop": 249.30144357814115,
+   "accuracy": 0.651118760757315,
+   "reference": {
+    "file": "references/moe-auxfree_R4_lam0_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 47.712
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 54.53
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi4b/latency_moe_auxfree_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 09:16:40",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 4 Model B Rev 1.4",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-v8",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "1800000",
+       "max_khz": "1800000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 4 Model B Rev 1.4"
+    },
+    "mem_total_kb": "8007400",
+    "thermal_c": {
+     "cpu-thermal": 46.738
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 09:40:56",
+   "model_tag": "moe_auxfree_s3_top2",
+   "_file": "rpi4b/latency_moe_auxfree_s3_top2.json"
+  },
+  {
+   "board": "rpi4b",
+   "model": "deploy/models/moe_fixed_s3_top1.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 229.53992650086343,
+    "median": 229.23121250005352,
+    "p90": 231.35266500003127,
+    "p99": 233.00305500015384,
+    "std": 1.334418993497996,
+    "min": 223.61963399998785,
+    "max": 245.78269299991007
+   },
+   "e2e_ms": {
+    "mean": 236.600677246989,
+    "median": 236.26119999971706,
+    "p90": 238.38543400052004,
+    "p99": 239.98634800045693,
+    "std": 3.8877710723626864,
+    "min": 230.6443979996402,
+    "max": 513.9644920000137
+   },
+   "loop_seconds": 1375.6111165699995,
+   "throughput_img_per_s": 4.223577383182882,
+   "e2e_ms_from_loop": 236.76611300688458,
+   "accuracy": 0.6337349397590362,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 0.9628227194492255,
+    "expert_set_agreement": 0.0,
+    "top1_expert_agreement": 1.0,
+    "checked": false,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 47.712
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 55.017
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi4b/latency_moe_fixed_s3_top1_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 08:29:10",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 4 Model B Rev 1.4",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-v8",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "1800000",
+       "max_khz": "1800000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 4 Model B Rev 1.4"
+    },
+    "mem_total_kb": "8007400",
+    "thermal_c": {
+     "cpu-thermal": 46.738
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 08:52:14",
+   "model_tag": "moe_fixed_s3_top1",
+   "_file": "rpi4b/latency_moe_fixed_s3_top1.json"
+  },
+  {
+   "board": "rpi4b",
+   "model": "deploy/models/moe_fixed_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 241.31066513373403,
+    "median": 241.0371739999846,
+    "p90": 243.10749599999326,
+    "p99": 244.6518870001455,
+    "std": 1.3421665670667935,
+    "min": 234.58666299984543,
+    "max": 264.65416500013816
+   },
+   "e2e_ms": {
+    "mean": 248.397183137348,
+    "median": 248.11449249978068,
+    "p90": 250.15660999997635,
+    "p99": 251.73262199996316,
+    "std": 3.8637515571109686,
+    "min": 241.4606620000086,
+    "max": 523.4866850000799
+   },
+   "loop_seconds": 1444.2096634640002,
+   "throughput_img_per_s": 4.02296158721474,
+   "e2e_ms_from_loop": 248.57309181824445,
+   "accuracy": 0.640447504302926,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 48.686
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 54.043
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi4b/latency_moe_fixed_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 08:04:53",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 4 Model B Rev 1.4",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-v8",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "1800000",
+       "max_khz": "1800000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 4 Model B Rev 1.4"
+    },
+    "mem_total_kb": "8007400",
+    "thermal_c": {
+     "cpu-thermal": 46.738
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 08:29:05",
+   "model_tag": "moe_fixed_s3_top2",
+   "_file": "rpi4b/latency_moe_fixed_s3_top2.json"
+  },
+  {
+   "board": "rpi4b",
+   "model": "deploy/models/moe_fuzzy_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 241.30714162392906,
+    "median": 240.8611020000535,
+    "p90": 242.95208100011223,
+    "p99": 244.4415170002685,
+    "std": 6.780586317001654,
+    "min": 234.31006700047874,
+    "max": 514.0481710004678
+   },
+   "e2e_ms": {
+    "mean": 248.32425259243686,
+    "median": 247.8189264993489,
+    "p90": 249.92803000077402,
+    "p99": 251.44793799881882,
+    "std": 7.783167500358461,
+    "min": 241.06940799993026,
+    "max": 526.6061199999967
+   },
+   "loop_seconds": 1443.7822776459998,
+   "throughput_img_per_s": 4.024152457026177,
+   "e2e_ms_from_loop": 248.49953143648878,
+   "accuracy": 0.6454388984509466,
+   "reference": {
+    "file": "references/moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 48.199
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 54.043
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi4b/latency_moe_fuzzy_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 09:41:02",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 4 Model B Rev 1.4",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-v8",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "1800000",
+       "max_khz": "1800000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 4 Model B Rev 1.4"
+    },
+    "mem_total_kb": "8007400",
+    "thermal_c": {
+     "cpu-thermal": 44.79
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 10:05:14",
+   "model_tag": "moe_fuzzy_s3_top2",
+   "_file": "rpi4b/latency_moe_fuzzy_s3_top2.json"
+  },
+  {
+   "board": "rpi4b",
+   "model": "deploy/models/moe_schedule_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 241.79550704595883,
+    "median": 241.56915999992634,
+    "p90": 243.7924430005296,
+    "p99": 245.42704399937065,
+    "std": 1.4661674021376154,
+    "min": 235.75678399993194,
+    "max": 261.7388709995794
+   },
+   "e2e_ms": {
+    "mean": 248.80612503787276,
+    "median": 248.52425100016262,
+    "p90": 250.74821999987762,
+    "p99": 252.40228299935552,
+    "std": 3.9022505836767505,
+    "min": 242.43342299996584,
+    "max": 523.3191309998801
+   },
+   "loop_seconds": 1446.5859167620001,
+   "throughput_img_per_s": 4.0163532166861895,
+   "e2e_ms_from_loop": 248.98208550120484,
+   "accuracy": 0.6492254733218589,
+   "reference": {
+    "file": "references/moe-schedule_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 48.199
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 54.043
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi4b/latency_moe_schedule_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 08:52:19",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 4 Model B Rev 1.4",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-v8",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "1800000",
+       "max_khz": "1800000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 4 Model B Rev 1.4"
+    },
+    "mem_total_kb": "8007400",
+    "thermal_c": {
+     "cpu-thermal": 44.79
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 09:16:34",
+   "model_tag": "moe_schedule_s3_top2",
+   "_file": "rpi4b/latency_moe_schedule_s3_top2.json"
+  },
+  {
+   "board": "rpi4b",
+   "model": "deploy/models/single_s3.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 227.45482616454382,
+    "median": 226.8430989998933,
+    "p90": 231.09461000001374,
+    "p99": 232.41851600005248,
+    "std": 2.320035883995163,
+    "min": 221.04010700002164,
+    "max": 287.80942099990625
+   },
+   "e2e_ms": {
+    "mean": 236.5497442487095,
+    "median": 235.98065749990838,
+    "p90": 240.20681299998614,
+    "p99": 241.74068199999965,
+    "std": 2.3982134049344728,
+    "min": 228.26517499993315,
+    "max": 296.35187299993504
+   },
+   "loop_seconds": 1375.064133954,
+   "throughput_img_per_s": 4.225257467295966,
+   "e2e_ms_from_loop": 236.67196797831323,
+   "accuracy": 0.6438898450946644,
+   "reference": {
+    "file": "references/single_augB_lr1e-3_wd0.01_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 39.92
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 54.53
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi4b/latency_single_s3_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 07:41:45",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 4 Model B Rev 1.4",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-v8",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "1800000",
+       "max_khz": "1800000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 4 Model B Rev 1.4"
+    },
+    "mem_total_kb": "8007400",
+    "thermal_c": {
+     "cpu-thermal": 35.537
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": null
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 08:04:48",
+   "model_tag": "single_s3",
+   "_file": "rpi4b/latency_single_s3.json"
+  },
+  {
+   "board": "rpi5",
+   "model": "deploy/models/moe_auxfree_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 81.93903920636504,
+    "median": 82.00337900007071,
+    "p90": 82.60263499960274,
+    "p99": 83.14577400051348,
+    "std": 0.7225817751013092,
+    "min": 80.11569199970836,
+    "max": 108.38245000013558
+   },
+   "e2e_ms": {
+    "mean": 85.26863240775069,
+    "median": 85.28995500000747,
+    "p90": 85.93136899980891,
+    "p99": 86.47168999959831,
+    "std": 2.2590864918503404,
+    "min": 83.29806099936832,
+    "max": 247.72403400038456
+   },
+   "loop_seconds": 495.96767342300063,
+   "throughput_img_per_s": 11.714473162940946,
+   "e2e_ms_from_loop": 85.36448768037877,
+   "accuracy": 0.651118760757315,
+   "reference": {
+    "file": "references/moe-auxfree_R4_lam0_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 53.45
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 58.95
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21394
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.20992
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi5/latency_moe_auxfree_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 08:14:43",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-2712",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "2400000",
+       "max_khz": "2400000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 5 Model B Rev 1.0"
+    },
+    "mem_total_kb": "8255808",
+    "thermal_c": {
+     "cpu-thermal": 51.25
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21394
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 08:23:03",
+   "model_tag": "moe_auxfree_s3_top2",
+   "_file": "rpi5/latency_moe_auxfree_s3_top2.json"
+  },
+  {
+   "board": "rpi5",
+   "model": "deploy/models/moe_fixed_s3_top1.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 77.21149443372857,
+    "median": 77.21940599958543,
+    "p90": 77.93525700071768,
+    "p99": 78.41318200007663,
+    "std": 0.6784274195121685,
+    "min": 75.11083200006397,
+    "max": 103.31213300014497
+   },
+   "e2e_ms": {
+    "mean": 80.5435648841632,
+    "median": 80.52516250018016,
+    "p90": 81.27408199925412,
+    "p99": 81.77242900001147,
+    "std": 2.2199828530416865,
+    "min": 78.21278500068729,
+    "max": 241.004600999986
+   },
+   "loop_seconds": 468.5168960350002,
+   "throughput_img_per_s": 12.400833458023184,
+   "e2e_ms_from_loop": 80.63974114199658,
+   "accuracy": 0.6337349397590362,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 0.9628227194492255,
+    "expert_set_agreement": 0.0,
+    "top1_expert_agreement": 1.0,
+    "checked": false,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 54.0
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 57.85
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21796
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21796
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi5/latency_moe_fixed_s3_top1_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 07:58:26",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-2712",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "2400000",
+       "max_khz": "2400000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 5 Model B Rev 1.0"
+    },
+    "mem_total_kb": "8255808",
+    "thermal_c": {
+     "cpu-thermal": 52.35
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21796
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 08:06:17",
+   "model_tag": "moe_fixed_s3_top1",
+   "_file": "rpi5/latency_moe_fixed_s3_top1.json"
+  },
+  {
+   "board": "rpi5",
+   "model": "deploy/models/moe_fixed_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 82.03523506419559,
+    "median": 82.02812150011596,
+    "p90": 82.64761900045414,
+    "p99": 83.29201900050975,
+    "std": 0.8547443244069242,
+    "min": 79.89911799995753,
+    "max": 122.04837199988106
+   },
+   "e2e_ms": {
+    "mean": 85.36291502787692,
+    "median": 85.31915799994749,
+    "p90": 85.97402800023701,
+    "p99": 86.68834399941261,
+    "std": 2.309534208038649,
+    "min": 83.40179500009981,
+    "max": 248.34464999912598
+   },
+   "loop_seconds": 496.51037613599965,
+   "throughput_img_per_s": 11.701668845705205,
+   "e2e_ms_from_loop": 85.45789606471595,
+   "accuracy": 0.640447504302926,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 54.0
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 59.5
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21394
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21662
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi5/latency_moe_fixed_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 07:50:04",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-2712",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "2400000",
+       "max_khz": "2400000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 5 Model B Rev 1.0"
+    },
+    "mem_total_kb": "8255808",
+    "thermal_c": {
+     "cpu-thermal": 51.8
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21394
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 07:58:23",
+   "model_tag": "moe_fixed_s3_top2",
+   "_file": "rpi5/latency_moe_fixed_s3_top2.json"
+  },
+  {
+   "board": "rpi5",
+   "model": "deploy/models/moe_fuzzy_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 81.83792442048129,
+    "median": 81.89546499988865,
+    "p90": 82.46643799975573,
+    "p99": 82.94311400004517,
+    "std": 0.5288395496009698,
+    "min": 79.60306299992226,
+    "max": 83.8338740004474
+   },
+   "e2e_ms": {
+    "mean": 85.1513351280563,
+    "median": 85.17080399997212,
+    "p90": 85.78119699996023,
+    "p99": 86.28579400010494,
+    "std": 2.197502253615916,
+    "min": 82.97942200078978,
+    "max": 247.17969100038317
+   },
+   "loop_seconds": 495.28484294100053,
+   "throughput_img_per_s": 11.730623464066111,
+   "e2e_ms_from_loop": 85.2469609192772,
+   "accuracy": 0.6454388984509466,
+   "reference": {
+    "file": "references/moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 54.0
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 60.05
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21528
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.2193
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi5/latency_moe_fuzzy_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 08:23:05",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-2712",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "2400000",
+       "max_khz": "2400000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 5 Model B Rev 1.0"
+    },
+    "mem_total_kb": "8255808",
+    "thermal_c": {
+     "cpu-thermal": 52.35
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21528
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 08:31:23",
+   "model_tag": "moe_fuzzy_s3_top2",
+   "_file": "rpi5/latency_moe_fuzzy_s3_top2.json"
+  },
+  {
+   "board": "rpi5",
+   "model": "deploy/models/moe_schedule_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 82.36914722563976,
+    "median": 82.45113100019807,
+    "p90": 83.00706499994703,
+    "p99": 83.45917900078348,
+    "std": 0.6553771564913691,
+    "min": 79.76613599930715,
+    "max": 109.60482599966781
+   },
+   "e2e_ms": {
+    "mean": 85.69805400601848,
+    "median": 85.73637550034618,
+    "p90": 86.35421800045151,
+    "p99": 86.81500900001993,
+    "std": 2.2259493033373383,
+    "min": 82.99194299979717,
+    "max": 247.18054300046788
+   },
+   "loop_seconds": 498.47086075599964,
+   "throughput_img_per_s": 11.655646212074133,
+   "e2e_ms_from_loop": 85.79532887366604,
+   "accuracy": 0.6492254733218589,
+   "reference": {
+    "file": "references/moe-schedule_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 54.55
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 58.4
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21528
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21394
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi5/latency_moe_schedule_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 08:06:19",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-2712",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "2400000",
+       "max_khz": "2400000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 5 Model B Rev 1.0"
+    },
+    "mem_total_kb": "8255808",
+    "thermal_c": {
+     "cpu-thermal": 52.35
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21528
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 08:14:41",
+   "model_tag": "moe_schedule_s3_top2",
+   "_file": "rpi5/latency_moe_schedule_s3_top2.json"
+  },
+  {
+   "board": "rpi5",
+   "model": "deploy/models/single_s3.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 4,
+   "model_ms": {
+    "mean": 76.33153848399336,
+    "median": 76.41457699992316,
+    "p90": 77.06650399995851,
+    "p99": 77.64558599956217,
+    "std": 0.6135446621126588,
+    "min": 73.68359700012661,
+    "max": 78.98485199984862
+   },
+   "e2e_ms": {
+    "mean": 80.78923326712761,
+    "median": 80.80713999970612,
+    "p90": 81.64519599995401,
+    "p99": 82.52789600010146,
+    "std": 0.7355966922653645,
+    "min": 77.32958299948223,
+    "max": 90.53794000010384
+   },
+   "loop_seconds": 469.69083120899995,
+   "throughput_img_per_s": 12.36983908126302,
+   "e2e_ms_from_loop": 80.84179538881239,
+   "accuracy": 0.6438898450946644,
+   "reference": {
+    "file": "references/single_augB_lr1e-3_wd0.01_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "cpu-thermal": 36.4
+   },
+   "thermal_end_c": {
+    "cpu-thermal": 60.05
+   },
+   "power": {
+    "start": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21528
+    },
+    "end": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21126
+    },
+    "ok": true
+   },
+   "predictions_csv": "deploy/results/rpi5/latency_single_s3_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-10 07:42:09",
+    "hostname": "zzypi",
+    "device_tree_model": "Raspberry Pi 5 Model B Rev 1.0",
+    "os": "Debian GNU/Linux 13 (trixie)",
+    "kernel": "6.18.50+rpt-rpi-2712",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 4,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 4,
+     "online": "0-3",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "ondemand",
+       "cur_khz": "2400000",
+       "max_khz": "2400000"
+      }
+     ],
+     "cpu_model": "Raspberry Pi 5 Model B Rev 1.0"
+    },
+    "mem_total_kb": "8255808",
+    "thermal_c": {
+     "cpu-thermal": 33.1
+    },
+    "power": {
+     "throttled": "0x0",
+     "ok": true,
+     "ext5v_v": 5.21528
+    },
+    "jetson": null
+   },
+   "finished": "2026-11-10 07:50:02",
+   "model_tag": "single_s3",
+   "_file": "rpi5/latency_single_s3.json"
+  },
+  {
+   "board": "xavier_nx",
+   "model": "deploy/models/moe_auxfree_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 98.23270109157228,
+    "median": 97.35505499975261,
+    "p90": 100.07583999959024,
+    "p99": 123.90682399927755,
+    "std": 8.604189333880086,
+    "min": 88.5065949996715,
+    "max": 277.74305999992066
+   },
+   "e2e_ms": {
+    "mean": 105.4120253451021,
+    "median": 104.47593099979713,
+    "p90": 107.35748099978082,
+    "p99": 131.57524500002182,
+    "std": 9.604105355532663,
+    "min": 95.10722499999247,
+    "max": 414.57747200001904
+   },
+   "loop_seconds": 613.9677127250006,
+   "throughput_img_per_s": 9.463038331793076,
+   "e2e_ms_from_loop": 105.67430511617911,
+   "accuracy": 0.651118760757315,
+   "reference": {
+    "file": "references/moe-auxfree_R4_lam0_sig0_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 33.0,
+    "AUX-therm": 33.5,
+    "AO-therm": 33.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.45
+   },
+   "thermal_end_c": {
+    "CPU-therm": 35.5,
+    "GPU-therm": 33.5,
+    "AUX-therm": 33.5,
+    "AO-therm": 33.5,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 34.25
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/xavier_nx/latency_moe_auxfree_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:41:26",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 34.5,
+     "GPU-therm": 33.0,
+     "AUX-therm": 33.5,
+     "AO-therm": 33.5,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 33.6
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG WARN: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG CRIT: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 01:51:50",
+   "model_tag": "moe_auxfree_s3_top2",
+   "_file": "xavier_nx/latency_moe_auxfree_s3_top2.json"
+  },
+  {
+   "board": "xavier_nx",
+   "model": "deploy/models/moe_fixed_s3_top1.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 92.32239482839955,
+    "median": 90.9586424995723,
+    "p90": 95.4869779998262,
+    "p99": 122.86376300016855,
+    "std": 8.086887053447997,
+    "min": 82.01488899976539,
+    "max": 273.06762099942716
+   },
+   "e2e_ms": {
+    "mean": 99.63657009518043,
+    "median": 98.1882015003066,
+    "p90": 102.9311800002688,
+    "p99": 131.85599700045714,
+    "std": 9.265818930568749,
+    "min": 89.21718200053874,
+    "max": 429.7267650008507
+   },
+   "loop_seconds": 580.3466331580003,
+   "throughput_img_per_s": 10.011258217152815,
+   "e2e_ms_from_loop": 99.88754443339074,
+   "accuracy": 0.6337349397590362,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 0.9628227194492255,
+    "expert_set_agreement": 0.0,
+    "top1_expert_agreement": 1.0,
+    "checked": false,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "CPU-therm": 34.0,
+    "GPU-therm": 32.5,
+    "AUX-therm": 32.5,
+    "AO-therm": 32.5,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 32.8
+   },
+   "thermal_end_c": {
+    "CPU-therm": 35.5,
+    "GPU-therm": 33.5,
+    "AUX-therm": 33.5,
+    "AO-therm": 34.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 34.1
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/xavier_nx/latency_moe_fixed_s3_top1_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:20:50",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 33.5,
+     "GPU-therm": 32.5,
+     "AUX-therm": 32.5,
+     "AO-therm": 33.0,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 32.8
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG WARN: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG CRIT: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 01:30:40",
+   "model_tag": "moe_fixed_s3_top1",
+   "_file": "xavier_nx/latency_moe_fixed_s3_top1.json"
+  },
+  {
+   "board": "xavier_nx",
+   "model": "deploy/models/moe_fixed_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 98.53499984475341,
+    "median": 97.41975850010931,
+    "p90": 100.86760400008643,
+    "p99": 127.45495899980597,
+    "std": 8.268209072368839,
+    "min": 88.87848900030804,
+    "max": 251.5396700000565
+   },
+   "e2e_ms": {
+    "mean": 105.77277110000125,
+    "median": 104.585682999641,
+    "p90": 108.15765100051067,
+    "p99": 137.1292909998374,
+    "std": 9.160284389535773,
+    "min": 96.0540480000418,
+    "max": 385.9327430000121
+   },
+   "loop_seconds": 616.0703397980005,
+   "throughput_img_per_s": 9.430741304483194,
+   "e2e_ms_from_loop": 106.03620306333916,
+   "accuracy": 0.640447504302926,
+   "reference": {
+    "file": "references/moe-fixed_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "CPU-therm": 34.0,
+    "GPU-therm": 32.5,
+    "AUX-therm": 32.5,
+    "AO-therm": 32.5,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 32.95
+   },
+   "thermal_end_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 33.0,
+    "AUX-therm": 33.5,
+    "AO-therm": 33.5,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.75
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/xavier_nx/latency_moe_fixed_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:10:15",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 33.5,
+     "GPU-therm": 32.5,
+     "AUX-therm": 32.5,
+     "AO-therm": 32.5,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 32.8
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG WARN: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG CRIT: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 01:20:42",
+   "model_tag": "moe_fixed_s3_top2",
+   "_file": "xavier_nx/latency_moe_fixed_s3_top2.json"
+  },
+  {
+   "board": "xavier_nx",
+   "model": "deploy/models/moe_fuzzy_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 99.53070352169352,
+    "median": 98.50458600021739,
+    "p90": 101.07144600078755,
+    "p99": 124.3837040001381,
+    "std": 7.359908628265629,
+    "min": 90.04571799960104,
+    "max": 258.6445910001203
+   },
+   "e2e_ms": {
+    "mean": 106.6975444688454,
+    "median": 105.56725149990598,
+    "p90": 108.23528899982193,
+    "p99": 132.5224949996482,
+    "std": 8.684508011812246,
+    "min": 97.0277159995021,
+    "max": 437.46790699970006
+   },
+   "loop_seconds": 621.4288538830006,
+   "throughput_img_per_s": 9.349421037816628,
+   "e2e_ms_from_loop": 106.95849464423418,
+   "accuracy": 0.6454388984509466,
+   "reference": {
+    "file": "references/moe-fuzzy_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "CPU-therm": 34.5,
+    "GPU-therm": 32.5,
+    "AUX-therm": 32.5,
+    "AO-therm": 32.5,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.1
+   },
+   "thermal_end_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 33.0,
+    "AUX-therm": 33.0,
+    "AO-therm": 33.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.45
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/xavier_nx/latency_moe_fuzzy_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:51:58",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 33.5,
+     "GPU-therm": 32.5,
+     "AUX-therm": 32.5,
+     "AO-therm": 33.0,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 32.8
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG WARN: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG CRIT: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 02:02:30",
+   "model_tag": "moe_fuzzy_s3_top2",
+   "_file": "xavier_nx/latency_moe_fuzzy_s3_top2.json"
+  },
+  {
+   "board": "xavier_nx",
+   "model": "deploy/models/moe_schedule_s3_top2.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 98.9967059838186,
+    "median": 97.96457949960313,
+    "p90": 101.33886900075595,
+    "p99": 124.99576399932266,
+    "std": 8.34911217244634,
+    "min": 87.36021799995797,
+    "max": 270.2856129999418
+   },
+   "e2e_ms": {
+    "mean": 106.16739735421659,
+    "median": 105.05879000038476,
+    "p90": 108.63260899986926,
+    "p99": 133.1413749994681,
+    "std": 9.400979658848792,
+    "min": 94.32072900017374,
+    "max": 415.8467760007625
+   },
+   "loop_seconds": 618.3474534110001,
+   "throughput_img_per_s": 9.396011850538404,
+   "e2e_ms_from_loop": 106.42813311721171,
+   "accuracy": 0.6492254733218589,
+   "reference": {
+    "file": "references/moe-schedule_R4_lam1.5_sig0.4_aw0_augB_lr1e-3_wd1e-4_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "expert_set_agreement": 1.0,
+    "top1_expert_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 32.5,
+    "AUX-therm": 32.5,
+    "AO-therm": 33.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 32.95
+   },
+   "thermal_end_c": {
+    "CPU-therm": 36.0,
+    "GPU-therm": 33.5,
+    "AUX-therm": 34.0,
+    "AO-therm": 34.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 34.6
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/xavier_nx/latency_moe_schedule_s3_top2_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 01:30:49",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 34.0,
+     "GPU-therm": 32.5,
+     "AUX-therm": 33.0,
+     "AO-therm": 33.0,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 33.15
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG WARN: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG CRIT: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 01:41:17",
+   "model_tag": "moe_schedule_s3_top2",
+   "_file": "xavier_nx/latency_moe_schedule_s3_top2.json"
+  },
+  {
+   "board": "xavier_nx",
+   "model": "deploy/models/single_s3.pt",
+   "list": "data/val.csv",
+   "n": 5810,
+   "batch_size": 1,
+   "warmup": 5,
+   "threads": 6,
+   "model_ms": {
+    "mean": 93.46566036178291,
+    "median": 90.85214950027876,
+    "p90": 99.94288199959556,
+    "p99": 140.47714099979203,
+    "std": 11.410303431590537,
+    "min": 87.89991400044528,
+    "max": 249.5403550001356
+   },
+   "e2e_ms": {
+    "mean": 100.75698779725049,
+    "median": 98.11264700056199,
+    "p90": 107.31320800005051,
+    "p99": 150.1630959992326,
+    "std": 11.613257210027987,
+    "min": 94.89743199992517,
+    "max": 271.146852000129
+   },
+   "loop_seconds": 586.2134562040001,
+   "throughput_img_per_s": 9.911065565813525,
+   "e2e_ms_from_loop": 100.89732464784855,
+   "accuracy": 0.6438898450946644,
+   "reference": {
+    "file": "references/single_augB_lr1e-3_wd0.01_e50_s3/predictions.csv",
+    "n_matched": 5810,
+    "pred_agreement": 1.0,
+    "checked": true,
+    "ok": true
+   },
+   "thermal_start_c": {
+    "CPU-therm": 28.5,
+    "GPU-therm": 27.0,
+    "AUX-therm": 27.0,
+    "AO-therm": 27.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 27.45
+   },
+   "thermal_end_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 33.0,
+    "AUX-therm": 32.5,
+    "AO-therm": 33.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.45
+   },
+   "power": {
+    "start": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "end": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "ok": null
+   },
+   "predictions_csv": "deploy/results/xavier_nx/latency_single_s3_rerun_predictions.csv",
+   "env": {
+    "timestamp": "2026-11-11 02:09:13",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 27.5,
+     "GPU-therm": 26.5,
+     "AUX-therm": 26.5,
+     "AO-therm": 27.0,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 26.95
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2\nNVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13\nNVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG WARN: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_max\nNVPM ERROR: Error opening /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit: 13\nNVPM ERROR: failed to read PARAM VDDIN_OC_LIMIT: ARG CRIT: PATH /sys/devices/platform/c250000.i2c/i2c-7/7-0040/hwmon/hwmon5/curr1_crit",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 02:19:09",
+   "model_tag": "single_s3",
+   "_file": "xavier_nx/latency_single_s3.json"
+  }
+ ],
+ "rpi_discharge": [
+  {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi4b/power_moe_fixed_s3_top2_run1.log",
+   "board": "rpi4b",
+   "model": "moe_fixed_s3_top2",
+   "run_id": 1,
+   "threads": 4,
+   "heartbeats": 2542,
+   "elapsed_s": 25793.3,
+   "images": 104089.17756114207,
+   "model_ms_mean": 240.39,
+   "e2e_ms_mean": 247.8,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.8957703594615372,
+    "high": 1.0877211507747238
+   },
+   "p_avg_w": {
+    "low": 3.6148922394575336,
+    "high": 4.389512005055576
+   },
+   "bank": {
+    "name": "Intenso F10000",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi4b/power_moe_fixed_s3_top2_run1.log"
+  },
+  {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi4b/power_moe_fixed_s3_top2_run2.log",
+   "board": "rpi4b",
+   "model": "moe_fixed_s3_top2",
+   "run_id": 2,
+   "threads": 4,
+   "heartbeats": 2576,
+   "elapsed_s": 26178.6,
+   "images": 104787.01386893664,
+   "model_ms_mean": 242.34,
+   "e2e_ms_mean": 249.83,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.8898049152981954,
+    "high": 1.0804773971478088
+   },
+   "p_avg_w": {
+    "low": 3.5616877907909514,
+    "high": 4.324906603103298
+   },
+   "bank": {
+    "name": "Intenso F10000",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi4b/power_moe_fixed_s3_top2_run2.log"
+  },
+  {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi4b/power_single_s3_run1.log",
+   "board": "rpi4b",
+   "model": "single_s3",
+   "run_id": 1,
+   "threads": 4,
+   "heartbeats": 2591,
+   "elapsed_s": 26168.2,
+   "images": 111431.29135579747,
+   "model_ms_mean": 227.41,
+   "e2e_ms_mean": 234.84,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.8367488060628041,
+    "high": 1.0160521216476908
+   },
+   "p_avg_w": {
+    "low": 3.563103308595929,
+    "high": 4.3266254461522
+   },
+   "bank": {
+    "name": "Intenso F10000",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi4b/power_single_s3_run1.log"
+  },
+  {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi4b/power_single_s3_run2.log",
+   "board": "rpi4b",
+   "model": "single_s3",
+   "run_id": 2,
+   "threads": 4,
+   "heartbeats": 2562,
+   "elapsed_s": 25953.9,
+   "images": 110167.22363568399,
+   "model_ms_mean": 228.19,
+   "e2e_ms_mean": 235.59,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.8463497301914293,
+    "high": 1.0277103866610213
+   },
+   "p_avg_w": {
+    "low": 3.5925236669633462,
+    "high": 4.3623501670269205
+   },
+   "bank": {
+    "name": "Intenso F10000",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi4b/power_single_s3_run2.log"
+  },
+  {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi5/power_moe_fixed_s3_top2_run1.log",
+   "board": "rpi5",
+   "model": "moe_fixed_s3_top2",
+   "run_id": 1,
+   "threads": 4,
+   "heartbeats": 1812,
+   "elapsed_s": 18205.0,
+   "images": 209710.596978022,
+   "model_ms_mean": 83.15,
+   "e2e_ms_mean": 86.81,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.44461272507736793,
+    "high": 0.5398868804510897
+   },
+   "p_avg_w": {
+    "low": 5.121669870914584,
+    "high": 6.219170557539138
+   },
+   "bank": {
+    "name": "Goji G6P10BK25",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi5/power_moe_fixed_s3_top2_run1.log"
+  },
+  {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi5/power_single_s3_run1.log",
+   "board": "rpi5",
+   "model": "single_s3",
+   "run_id": 1,
+   "threads": 4,
+   "heartbeats": 1691,
+   "elapsed_s": 16983.6,
+   "images": 211842.36674401895,
+   "model_ms_mean": 76.57,
+   "e2e_ms_mean": 80.17,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.44013858716310106,
+    "high": 0.5344539986980512
+   },
+   "p_avg_w": {
+    "low": 5.490002119691939,
+    "high": 6.666431145340211
+   },
+   "bank": {
+    "name": "Goji G6P10BK25",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi5/power_single_s3_run1.log"
+  },
+  {
+   "log": "/home/my/workspace/dev/mypro/Edge-AI/deploy/results/rpi5/power_single_s3_run2.log",
+   "board": "rpi5",
+   "model": "single_s3",
+   "run_id": 2,
+   "threads": 4,
+   "heartbeats": 1820,
+   "elapsed_s": 18279.4,
+   "images": 227146.13172525502,
+   "model_ms_mean": 76.84,
+   "e2e_ms_mean": 80.47,
+   "e_out_wh": {
+    "low": 25.9,
+    "high": 31.45
+   },
+   "energy_per_image_j": {
+    "low": 0.410484648326649,
+    "high": 0.49844564439664524
+   },
+   "p_avg_w": {
+    "low": 5.100823878245456,
+    "high": 6.1938575664409115
+   },
+   "bank": {
+    "name": "Goji G6P10BK25",
+    "cell_wh": 37.0,
+    "rated_out_wh": null,
+    "eff_low": 0.7,
+    "eff_high": 0.85
+   },
+   "power": {
+    "ok": true,
+    "start_ok": true,
+    "first_bad_frac": null,
+    "first_bad_throttled": null
+   },
+   "_file": "rpi5/power_single_s3_run2.log"
+  }
+ ],
+ "rpi_discharge_invalid": [],
+ "jetson": [
+  {
+   "kind": "jetson_tegrastats_cpu_only",
+   "board": "orin_nano",
+   "model": "deploy/models/moe_fixed_s3_top1.pt",
+   "list": "data/val.csv",
+   "threads": 6,
+   "sample_s": 1.0,
+   "idle_seconds": 120.0,
+   "duration_seconds": 1200.0235209465027,
+   "power_source": [
+    "tegrastats:VDD_IN"
+   ],
+   "power_readings_short": [],
+   "p_idle": {
+    "mean_mw": 2922.3949579831933,
+    "std_mw": 24.51931788137636,
+    "n": 119,
+    "min_mw": 2905,
+    "max_mw": 3025
+   },
+   "p_load": {
+    "mean_mw": 5272.649874055415,
+    "std_mw": 94.99010950981196,
+    "n": 1191,
+    "min_mw": 4809,
+    "max_mw": 5422
+   },
+   "n_images": 13571,
+   "model_ms_mean": 82.64194348085184,
+   "e2e_ms_mean": 88.42557814063096,
+   "energy_per_image_mj": 466.2371134464751,
+   "incremental_energy_per_image_mj": 207.8226497315463,
+   "thermal_end_c": {
+    "cpu-thermal": 39.812,
+    "gpu-thermal": 39.75,
+    "soc0-thermal": 40.625,
+    "soc1-thermal": 39.312,
+    "soc2-thermal": 39.593,
+    "tj-thermal": 40.625
+   },
+   "env": {
+    "timestamp": "2026-11-11 03:38:04",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 38.781,
+     "gpu-thermal": 38.781,
+     "soc0-thermal": 39.906,
+     "soc1-thermal": 38.687,
+     "soc2-thermal": 38.75,
+     "tj-thermal": 39.968
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 04:00:10",
+   "model_tag": "moe_fixed_s3_top1",
+   "_file": "orin_nano/power_moe_fixed_s3_top1.json"
+  },
+  {
+   "kind": "jetson_tegrastats_cpu_only",
+   "board": "orin_nano",
+   "model": "deploy/models/moe_fixed_s3_top2.pt",
+   "list": "data/val.csv",
+   "threads": 6,
+   "sample_s": 1.0,
+   "idle_seconds": 120.0,
+   "duration_seconds": 1200.0485434532166,
+   "power_source": [
+    "tegrastats:VDD_IN"
+   ],
+   "power_readings_short": [],
+   "p_idle": {
+    "mean_mw": 2924.453781512605,
+    "std_mw": 25.62487889675328,
+    "n": 119,
+    "min_mw": 2905,
+    "max_mw": 3025
+   },
+   "p_load": {
+    "mean_mw": 5283.446683459278,
+    "std_mw": 90.00271646427402,
+    "n": 1191,
+    "min_mw": 4849,
+    "max_mw": 5383
+   },
+   "n_images": 12825,
+   "model_ms_mean": 87.8285805388054,
+   "e2e_ms_mean": 93.57103652656659,
+   "energy_per_image_mj": 494.37758260413517,
+   "incremental_energy_per_image_mj": 220.73341099396342,
+   "thermal_end_c": {
+    "cpu-thermal": 39.468,
+    "gpu-thermal": 39.593,
+    "soc0-thermal": 40.437,
+    "soc1-thermal": 39.125,
+    "soc2-thermal": 39.406,
+    "tj-thermal": 40.437
+   },
+   "env": {
+    "timestamp": "2026-11-11 03:15:50",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 38.656,
+     "gpu-thermal": 38.687,
+     "soc0-thermal": 39.812,
+     "soc1-thermal": 38.5,
+     "soc2-thermal": 38.687,
+     "tj-thermal": 39.75
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 03:37:55",
+   "model_tag": "moe_fixed_s3_top2",
+   "_file": "orin_nano/power_moe_fixed_s3_top2.json"
+  },
+  {
+   "kind": "jetson_tegrastats_cpu_only",
+   "board": "orin_nano",
+   "model": "deploy/models/single_s3.pt",
+   "list": "data/val.csv",
+   "threads": 6,
+   "sample_s": 1.0,
+   "idle_seconds": 120.0,
+   "duration_seconds": 1200.053730726242,
+   "power_source": [
+    "tegrastats:VDD_IN"
+   ],
+   "power_readings_short": [],
+   "p_idle": {
+    "mean_mw": 2920.2100840336134,
+    "std_mw": 21.365122741066514,
+    "n": 119,
+    "min_mw": 2905,
+    "max_mw": 2990
+   },
+   "p_load": {
+    "mean_mw": 5295.415617128463,
+    "std_mw": 95.25034965599741,
+    "n": 1191,
+    "min_mw": 4841,
+    "max_mw": 5422
+   },
+   "n_images": 13772,
+   "model_ms_mean": 81.23906726816926,
+   "e2e_ms_mean": 87.13721541724092,
+   "energy_per_image_mj": 461.42777135354464,
+   "incremental_energy_per_image_mj": 206.96879619750848,
+   "thermal_end_c": {
+    "cpu-thermal": 39.5,
+    "gpu-thermal": 39.156,
+    "soc0-thermal": 40.25,
+    "soc1-thermal": 38.906,
+    "soc2-thermal": 39.312,
+    "tj-thermal": 40.343
+   },
+   "env": {
+    "timestamp": "2026-11-11 02:53:35",
+    "hostname": "jetson-nano",
+    "device_tree_model": "NVIDIA Jetson Orin Nano Engineering Reference Developer Kit Super",
+    "os": "Ubuntu 22.04.5 LTS",
+    "kernel": "5.15.148-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3",
+       "governor": "schedutil",
+       "cur_khz": "1344000",
+       "max_khz": "1344000"
+      },
+      {
+       "policy": "policy4",
+       "cpus": "4 5",
+       "governor": "schedutil",
+       "cur_khz": "729600",
+       "max_khz": "1344000"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 1 (v8l)"
+    },
+    "mem_total_kb": "7802804",
+    "thermal_c": {
+     "cpu-thermal": 36.187,
+     "gpu-thermal": 36.187,
+     "soc0-thermal": 37.093,
+     "soc1-thermal": 35.875,
+     "soc2-thermal": 35.906,
+     "tj-thermal": 37.093
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R36 (release), REVISION: 4.4, GCID: 41062509, BOARD: generic, EABI: aarch64, DATE: Mon Jun 16 16:07:13 UTC 2025\n# KERNEL_VARIANT: oot\nTARGET_USERSPACE_LIB_DIR=nvidia\nTARGET_USERSPACE_LIB_DIR_PATH=usr/lib/aarch64-linux-gnu/nvidia",
+     "nvpmodel_q": "NV Power Mode: 25W\n1",
+     "jetson_clocks_show": "sudo: a password is required"
+    }
+   },
+   "finished": "2026-11-11 03:15:41",
+   "model_tag": "single_s3",
+   "_file": "orin_nano/power_single_s3.json"
+  },
+  {
+   "kind": "jetson_tegrastats_cpu_only",
+   "board": "xavier_nx",
+   "model": "deploy/models/moe_fixed_s3_top1.pt",
+   "list": "data/val.csv",
+   "threads": 6,
+   "sample_s": 1.0,
+   "idle_seconds": 120.0,
+   "duration_seconds": 1200.068531036377,
+   "power_source": [
+    "tegrastats:VDD_IN"
+   ],
+   "power_readings_short": [],
+   "p_idle": {
+    "mean_mw": 1736.8684210526317,
+    "std_mw": 63.16985084200898,
+    "n": 114,
+    "min_mw": 1668,
+    "max_mw": 2075
+   },
+   "p_load": {
+    "mean_mw": 5194.731728288908,
+    "std_mw": 94.70912295074778,
+    "n": 1163,
+    "min_mw": 4436,
+    "max_mw": 5462
+   },
+   "n_images": 12253,
+   "model_ms_mean": 90.5018056141171,
+   "e2e_ms_mean": 97.94079254357112,
+   "energy_per_image_mj": 508.77614251985057,
+   "incremental_energy_per_image_mj": 338.6658728180549,
+   "thermal_end_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 33.5,
+    "AUX-therm": 33.5,
+    "AO-therm": 33.5,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.95
+   },
+   "env": {
+    "timestamp": "2026-11-11 16:54:25",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 33.5,
+     "GPU-therm": 32.0,
+     "AUX-therm": 32.0,
+     "AO-therm": 32.5,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 32.45
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2",
+     "jetson_clocks_show": "SOC family:tegra194  Machine:NVIDIA Jetson Xavier NX Developer Kit\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \nGPU MinFreq=114750000 MaxFreq=1109250000 CurrentFreq=114750000\nEMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=0\nDLA0_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA0_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nDLA1_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA1_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nPVA0_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nPVA1_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nCVNAS MinFreq=0 MaxFreq=576000000 CurrentFreq=576000000\nFAN Dynamic Speed control=active hwmon4_pwm1=0\nNV Power Mode: MODE_15W_6CORE"
+    }
+   },
+   "finished": "2026-11-11 17:16:37",
+   "model_tag": "moe_fixed_s3_top1",
+   "_file": "xavier_nx/power_moe_fixed_s3_top1.json"
+  },
+  {
+   "kind": "jetson_tegrastats_cpu_only",
+   "board": "xavier_nx",
+   "model": "deploy/models/moe_fixed_s3_top2.pt",
+   "list": "data/val.csv",
+   "threads": 6,
+   "sample_s": 1.0,
+   "idle_seconds": 120.0,
+   "duration_seconds": 1200.0340192317963,
+   "power_source": [
+    "tegrastats:VDD_IN"
+   ],
+   "power_readings_short": [],
+   "p_idle": {
+    "mean_mw": 1751.921052631579,
+    "std_mw": 69.2310072424506,
+    "n": 114,
+    "min_mw": 1709,
+    "max_mw": 2157
+   },
+   "p_load": {
+    "mean_mw": 5056.03602058319,
+    "std_mw": 73.13797486969914,
+    "n": 1166,
+    "min_mw": 4355,
+    "max_mw": 5177
+   },
+   "n_images": 11069,
+   "model_ms_mean": 100.95449163014223,
+   "e2e_ms_mean": 108.4139506036495,
+   "energy_per_image_mj": 548.1448393857785,
+   "incremental_energy_per_image_mj": 358.2121569242849,
+   "thermal_end_c": {
+    "CPU-therm": 34.5,
+    "GPU-therm": 33.0,
+    "AUX-therm": 33.0,
+    "AO-therm": 33.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.6
+   },
+   "env": {
+    "timestamp": "2026-11-11 16:32:02",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 33.5,
+     "GPU-therm": 32.0,
+     "AUX-therm": 32.0,
+     "AO-therm": 32.5,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 32.45
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2",
+     "jetson_clocks_show": "SOC family:tegra194  Machine:NVIDIA Jetson Xavier NX Developer Kit\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \nGPU MinFreq=114750000 MaxFreq=1109250000 CurrentFreq=114750000\nEMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=0\nDLA0_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA0_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nDLA1_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA1_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nPVA0_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nPVA1_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nCVNAS MinFreq=0 MaxFreq=576000000 CurrentFreq=576000000\nFAN Dynamic Speed control=active hwmon4_pwm1=0\nNV Power Mode: MODE_15W_6CORE"
+    }
+   },
+   "finished": "2026-11-11 16:54:14",
+   "model_tag": "moe_fixed_s3_top2",
+   "_file": "xavier_nx/power_moe_fixed_s3_top2.json"
+  },
+  {
+   "kind": "jetson_tegrastats_cpu_only",
+   "board": "xavier_nx",
+   "model": "deploy/models/single_s3.pt",
+   "list": "data/val.csv",
+   "threads": 6,
+   "sample_s": 1.0,
+   "idle_seconds": 120.0,
+   "duration_seconds": 1200.045639514923,
+   "power_source": [
+    "tegrastats:VDD_IN"
+   ],
+   "power_readings_short": [],
+   "p_idle": {
+    "mean_mw": 1707.121739130435,
+    "std_mw": 63.985208593194066,
+    "n": 115,
+    "min_mw": 1668,
+    "max_mw": 2035
+   },
+   "p_load": {
+    "mean_mw": 5048.534305317324,
+    "std_mw": 69.68903071167551,
+    "n": 1166,
+    "min_mw": 4314,
+    "max_mw": 5136
+   },
+   "n_images": 11745,
+   "model_ms_mean": 94.52243230761238,
+   "e2e_ms_mean": 102.17502252149197,
+   "energy_per_image_mj": 515.8341063463223,
+   "incremental_energy_per_image_mj": 341.40890420374166,
+   "thermal_end_c": {
+    "CPU-therm": 35.0,
+    "GPU-therm": 33.0,
+    "AUX-therm": 33.0,
+    "AO-therm": 33.0,
+    "PMIC-Die": 50.0,
+    "thermal_fan_est": 33.4
+   },
+   "env": {
+    "timestamp": "2026-11-11 16:09:40",
+    "hostname": "ubuntu",
+    "device_tree_model": "NVIDIA Jetson Xavier NX Developer Kit",
+    "os": "Ubuntu 20.04.6 LTS",
+    "kernel": "5.10.216-tegra",
+    "machine": "aarch64",
+    "python": "3.13.5",
+    "torch": "2.11.0+cpu",
+    "torchvision": "0.26.0+cpu",
+    "timm": "1.0.22",
+    "numpy": "2.2.6",
+    "pillow": "12.0.0",
+    "torch_threads": 6,
+    "torch_interop_threads": 1,
+    "cpu": {
+     "cpu_count": 6,
+     "online": "0-5",
+     "cpufreq": [
+      {
+       "policy": "policy0",
+       "cpus": "0 1 2 3 4 5",
+       "governor": "schedutil",
+       "cur_khz": "1420800",
+       "max_khz": "1420800"
+      }
+     ],
+     "cpu_model": "ARMv8 Processor rev 0 (v8l)"
+    },
+    "mem_total_kb": "6997236",
+    "thermal_c": {
+     "CPU-therm": 27.5,
+     "GPU-therm": 26.5,
+     "AUX-therm": 26.5,
+     "AO-therm": 27.0,
+     "PMIC-Die": 50.0,
+     "thermal_fan_est": 26.95
+    },
+    "power": {
+     "throttled": null,
+     "ok": null,
+     "ext5v_v": null
+    },
+    "jetson": {
+     "nv_tegra_release": "# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026",
+     "nvpmodel_q": "NV Power Mode: MODE_15W_6CORE\n2",
+     "jetson_clocks_show": "SOC family:tegra194  Machine:NVIDIA Jetson Xavier NX Developer Kit\nOnline CPUs: 0-5\ncpu0:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu1:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu2:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu3:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1190400 IdleStates: C1=1 c6=1 \ncpu4:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \ncpu5:  Online=1 Governor=schedutil MinFreq=1190400 MaxFreq=1420800 CurrentFreq=1420800 IdleStates: C1=1 c6=1 \nGPU MinFreq=114750000 MaxFreq=1109250000 CurrentFreq=114750000\nEMC MinFreq=204000000 MaxFreq=1600000000 CurrentFreq=1600000000 FreqOverride=0\nDLA0_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA0_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nDLA1_CORE:   Online=1 MinFreq=0 MaxFreq=1100800000 CurrentFreq=1100800000\nDLA1_FALCON: Online=1 MinFreq=0 MaxFreq=640000000 CurrentFreq=640000000\nPVA0_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA0_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nPVA1_VPS0: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_VPS1: Online=1 MinFreq=0 MaxFreq=819200000 CurrentFreq=819200000\nPVA1_AXI:  Online=1 MinFreq=0 MaxFreq=601600000 CurrentFreq=601600000\nCVNAS MinFreq=0 MaxFreq=576000000 CurrentFreq=576000000\nFAN Dynamic Speed control=active hwmon4_pwm1=0\nNV Power Mode: MODE_15W_6CORE"
+    }
+   },
+   "finished": "2026-11-11 16:31:51",
+   "model_tag": "single_s3",
+   "_file": "xavier_nx/power_single_s3.json"
+  }
+ ]
+}

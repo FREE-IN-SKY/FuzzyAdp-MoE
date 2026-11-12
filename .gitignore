@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Dataset inputs (download as described in datasets/README.md)
+/datasets/RSCD dataset-1million/
+/datasets/Road-Surface-Dataset-per-day-split/
+/datasets/subsets_regenerated/
+
+# Large training outputs not included in this repository
+*.pth
+*.pt
+*.ckpt
+*.npz
+/runs/**/predictions.csv
+
+# Edge-device artifacts
+/deploy/models/
+/deploy_bundle.tgz
+/deploy/results/*/*_predictions.csv

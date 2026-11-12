@@ -1,0 +1,13 @@
+  500/5810  model 96.1 ms  e2e 103.5 ms
+  1000/5810  model 95.6 ms  e2e 102.9 ms
+  1500/5810  model 92.2 ms  e2e 99.3 ms
+  2000/5810  model 91.7 ms  e2e 99.2 ms
+  2500/5810  model 92.9 ms  e2e 100.1 ms
+  3000/5810  model 92.5 ms  e2e 99.7 ms
+  3500/5810  model 92.5 ms  e2e 99.7 ms
+  4000/5810  model 96.6 ms  e2e 103.9 ms
+  4500/5810  model 93.9 ms  e2e 101.2 ms
+  5000/5810  model 92.7 ms  e2e 100.1 ms
+  5500/5810  model 92.5 ms  e2e 99.8 ms
+xavier_nx single_s3.pt: n=5810 model 93.47 ms (median 90.85, p90 99.94), e2e 100.76 ms, 9.91 img/s, acc 0.6439, reference agreement 1.0000 (OK)
+saved deploy/results/xavier_nx/latency_single_s3_rerun.json
